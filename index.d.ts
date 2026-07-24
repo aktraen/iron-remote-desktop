@@ -330,6 +330,7 @@ export declare interface UserInteraction {
     setEnableAutoClipboard(enable: boolean): void;
     saveRemoteClipboardData(): Promise<void>;
     sendClipboardData(): Promise<void>;
+    pasteClipboardText(text: string): Promise<void>;
     invokeExtension(ext: Extension): void;
     /**
      * Enable file transfer support. Must be called before connect().
