@@ -9,7 +9,7 @@
     "Alexandr Yusuk"
   ],
   "description": "Backend-agnostic Web Component for remote desktop protocols \u2014 aktraen fork: layout-independent shortcuts + container-size resize + host->guest clipboard push + dynamic guest resize",
-  "version": "0.11.0-aktraen.5",
+  "version": "0.11.0-aktraen.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aktraen/IronRDP.git"
