@@ -3958,7 +3958,7 @@ function ur(t, e) {
     T > 0 && E > 0 && (T !== b.width || E !== b.height) && a.resizeDynamic(T, E);
   }
   function Ce() {
-    c() !== "true" || !N(f) || (clearTimeout(re), re = setTimeout(ot, 400));
+    c() !== "true" || !N(f) || (clearTimeout(re), re = setTimeout(ot, 150));
   }
   const Ee = (h) => {
     X(i()), Ce();
