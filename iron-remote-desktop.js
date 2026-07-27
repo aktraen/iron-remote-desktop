@@ -10,8 +10,8 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var _t2, _e, _a, _b;
 typeof window < "u" && (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add("5");
-const Ei = 2, Si = "[", Di = "]", it = {}, q = Symbol(), ms = false, te = 2, $s = 4, Ft = 8, ns = 16, xe = 32, ze = 64, Lt = 128, X = 256, Ct = 512, j = 1024, Le = 2048, qe = 4096, Mt = 8192, Pt = 16384, Ti = 32768, Ri = 65536, Oi = 1 << 19, Fs = 1 << 20, vt = Symbol("$state"), Ai = Symbol("legacy props");
-var Ps = Array.isArray, $i = Array.prototype.indexOf, Fi = Array.from, _t = Object.keys, Et = Object.defineProperty, Be = Object.getOwnPropertyDescriptor, Pi = Object.getOwnPropertyDescriptors, Ki = Object.prototype, Ni = Array.prototype, Ks = Object.getPrototypeOf;
+const Ei = 2, Si = "[", Di = "]", ot = {}, q = Symbol(), ms = false, te = 2, $s = 4, Ft = 8, ns = 16, Me = 32, qe = 64, xt = 128, X = 256, Lt = 512, j = 1024, xe = 2048, We = 4096, Ct = 8192, Pt = 16384, Ti = 32768, Ri = 65536, Oi = 1 << 19, Fs = 1 << 20, vt = Symbol("$state"), Ai = Symbol("legacy props");
+var Ps = Array.isArray, $i = Array.prototype.indexOf, Fi = Array.from, _t = Object.keys, Et = Object.defineProperty, ze = Object.getOwnPropertyDescriptor, Pi = Object.getOwnPropertyDescriptors, Ki = Object.prototype, Ni = Array.prototype, Ks = Object.getPrototypeOf;
 const bt = () => {
 };
 function Ns(t) {
@@ -100,17 +100,17 @@ function V(t, e) {
   (le === null || !le.includes(t)) && Xi(), Qi(t, e);
 }
 function Qi(t, e) {
-  return t.equals(e) || (t.v, t.v = e, t.wv = Gs(), qs(t, Le), R !== null && (R.f & j) !== 0 && (R.f & (xe | ze)) === 0 && (ue === null ? io([t]) : ue.push(t))), e;
+  return t.equals(e) || (t.v, t.v = e, t.wv = Gs(), qs(t, xe), R !== null && (R.f & j) !== 0 && (R.f & (Me | qe)) === 0 && (ue === null ? io([t]) : ue.push(t))), e;
 }
 function qs(t, e) {
   var s = t.reactions;
   if (s !== null)
     for (var i = s.length, o = 0; o < i; o++) {
       var r = s[o], c = r.f;
-      (c & Le) === 0 && (he(r, e), (c & (j | X)) !== 0 && ((c & te) !== 0 ? qs(
+      (c & xe) === 0 && (he(r, e), (c & (j | X)) !== 0 && ((c & te) !== 0 ? qs(
         /** @type {Derived} */
         r,
-        qe
+        We
       ) : us(
         /** @type {Effect} */
         r
@@ -119,7 +119,7 @@ function qs(t, e) {
 }
 // @__NO_SIDE_EFFECTS__
 function Ws(t) {
-  var e = te | Le, s = S !== null && (S.f & te) !== 0 ? (
+  var e = te | xe, s = S !== null && (S.f & te) !== 0 ? (
     /** @type {Derived} */
     S
   ) : null;
@@ -173,7 +173,7 @@ function eo(t) {
   return e;
 }
 function Vs(t) {
-  var e = eo(t), s = (ve || (t.f & X) !== 0) && t.deps !== null ? qe : j;
+  var e = eo(t), s = (ve || (t.f & X) !== 0) && t.deps !== null ? We : j;
   he(t, s), t.equals(e) || (t.v = e, t.wv = Gs());
 }
 function cs(t) {
@@ -186,7 +186,7 @@ function yt(t) {
 let B;
 function St(t) {
   if (t === null)
-    throw cs(), it;
+    throw cs(), ot;
   return B = t;
 }
 function js() {
@@ -198,7 +198,7 @@ function js() {
 function Wt(t) {
   if (se) {
     if (/* @__PURE__ */ Kt(B) !== null)
-      throw cs(), it;
+      throw cs(), ot;
     B = t;
   }
 }
@@ -244,7 +244,7 @@ function De(t, e = null, s) {
         if (u === vt)
           return t;
         var y = o.get(u), n = u in p;
-        if (y === void 0 && (!n || ((_a2 = Be(p, u)) == null ? void 0 : _a2.writable)) && (y = ce(De(n ? p[u] : q, f)), o.set(u, y)), y !== void 0) {
+        if (y === void 0 && (!n || ((_a2 = ze(p, u)) == null ? void 0 : _a2.writable)) && (y = ce(De(n ? p[u] : q, f)), o.set(u, y)), y !== void 0) {
           var d = K(y);
           return d === q ? void 0 : d;
         }
@@ -272,7 +272,7 @@ function De(t, e = null, s) {
         if (u === vt)
           return true;
         var k = o.get(u), y = k !== void 0 && k.v !== q || Reflect.has(p, u);
-        if (k !== void 0 || R !== null && (!y || ((_a2 = Be(p, u)) == null ? void 0 : _a2.writable))) {
+        if (k !== void 0 || R !== null && (!y || ((_a2 = ze(p, u)) == null ? void 0 : _a2.writable))) {
           k === void 0 && (k = ce(y ? De(p[u], f) : q), o.set(u, k));
           var n = K(k);
           if (n === q)
@@ -289,7 +289,7 @@ function De(t, e = null, s) {
             var l = o.get(a + "");
             l !== void 0 ? V(l, q) : a in p && (l = ce(q), o.set(a + "", l));
           }
-        n === void 0 ? (!d || ((_a2 = Be(p, u)) == null ? void 0 : _a2.writable)) && (n = ce(void 0), V(n, De(k, f)), o.set(u, n)) : (d = n.v !== q, V(n, De(k, f)));
+        n === void 0 ? (!d || ((_a2 = ze(p, u)) == null ? void 0 : _a2.writable)) && (n = ce(void 0), V(n, De(k, f)), o.set(u, n)) : (d = n.v !== q, V(n, De(k, f)));
         var m = Reflect.getOwnPropertyDescriptor(p, u);
         if ((m == null ? void 0 : m.set) && m.set.call(y, k), !d) {
           if (r && typeof u == "string") {
@@ -327,7 +327,7 @@ function Gt() {
   if (vs === void 0) {
     vs = window, Ys = /Firefox/.test(navigator.userAgent);
     var t = Element.prototype, e = Node.prototype;
-    Xs = Be(e, "firstChild").get, Zs = Be(e, "nextSibling").get, t.__click = void 0, t.__className = void 0, t.__attributes = null, t.__styles = null, t.__e = void 0, Text.prototype.__t = void 0;
+    Xs = ze(e, "firstChild").get, Zs = ze(e, "nextSibling").get, t.__click = void 0, t.__className = void 0, t.__attributes = null, t.__styles = null, t.__e = void 0, Text.prototype.__t = void 0;
   }
 }
 function Js(t = "") {
@@ -357,7 +357,7 @@ let wt = false, Tt = false, Rt = null, gt = false, ls = false;
 function bs(t) {
   ls = t;
 }
-let ot = [];
+let rt = [];
 let S = null, ee = false;
 function be(t) {
   S = t;
@@ -381,12 +381,12 @@ function Gs() {
 function Nt(t) {
   var _a2;
   var e = t.f;
-  if ((e & Le) !== 0)
+  if ((e & xe) !== 0)
     return true;
-  if ((e & qe) !== 0) {
+  if ((e & We) !== 0) {
     var s = t.deps, i = (e & X) !== 0;
     if (s !== null) {
-      var o, r, c = (e & Ct) !== 0, f = i && R !== null && !ve, p = s.length;
+      var o, r, c = (e & Lt) !== 0, f = i && R !== null && !ve, p = s.length;
       if (c || f) {
         var u = (
           /** @type {Derived} */
@@ -394,7 +394,7 @@ function Nt(t) {
         ), k = u.parent;
         for (o = 0; o < p; o++)
           r = s[o], (c || !((_a2 = r == null ? void 0 : r.reactions) == null ? void 0 : _a2.includes(u))) && (r.reactions ?? (r.reactions = [])).push(u);
-        c && (u.f ^= Ct), f && k !== null && (k.f & X) === 0 && (u.f ^= X);
+        c && (u.f ^= Lt), f && k !== null && (k.f & X) === 0 && (u.f ^= X);
       }
       for (o = 0; o < p; o++)
         if (r = s[o], Nt(
@@ -412,19 +412,19 @@ function Nt(t) {
 }
 function oo(t, e) {
   for (var s = e; s !== null; ) {
-    if ((s.f & Lt) !== 0)
+    if ((s.f & xt) !== 0)
       try {
         s.fn(t);
         return;
       } catch {
-        s.f ^= Lt;
+        s.f ^= xt;
       }
     s = s.parent;
   }
   throw wt = false, t;
 }
 function ro(t) {
-  return (t.f & Pt) === 0 && (t.parent === null || (t.parent.f & Lt) === 0);
+  return (t.f & Pt) === 0 && (t.parent === null || (t.parent.f & xt) === 0);
 }
 function It(t, e, s, i) {
   if (wt) {
@@ -448,7 +448,7 @@ function ei(t, e, s = true) {
         r,
         e,
         false
-      ) : e === r && (s ? he(r, Le) : (r.f & j) !== 0 && he(r, qe), us(
+      ) : e === r && (s ? he(r, xe) : (r.f & j) !== 0 && he(r, We), us(
         /** @type {Effect} */
         r
       ));
@@ -458,7 +458,7 @@ function ti(t) {
   var _a2;
   var e = I, s = H, i = ue, o = S, r = ve, c = le, f = U, p = ee, u = t.f;
   I = /** @type {null | Value[]} */
-  null, H = 0, ue = null, ve = (u & X) !== 0 && (ee || !gt || S === null), S = (u & (xe | ze)) === 0 ? t : null, le = null, ws(t.ctx), ee = false, Ot++;
+  null, H = 0, ue = null, ve = (u & X) !== 0 && (ee || !gt || S === null), S = (u & (Me | qe)) === 0 ? t : null, le = null, ws(t.ctx), ee = false, Ot++;
   try {
     var k = (
       /** @type {Function} */
@@ -475,7 +475,7 @@ function ti(t) {
         for (n = H; n < y.length; n++)
           ((_a2 = y[n]).reactions ?? (_a2.reactions = [])).push(t);
     } else y !== null && H < y.length && (At(t, H), y.length = H);
-    if (ui() && ue !== null && !ee && y !== null && (t.f & (te | qe | Le)) === 0)
+    if (ui() && ue !== null && !ee && y !== null && (t.f & (te | We | xe)) === 0)
       for (n = 0; n < /** @type {Source[]} */
       ue.length; n++)
         ei(
@@ -500,7 +500,7 @@ function no(t, e) {
   s === null && (e.f & te) !== 0 && // Destroying a child effect while updating a parent effect can cause a dependency to appear
   // to be unused, when in fact it is used by the currently-updating parent. Checking `new_deps`
   // allows us to skip the expensive work of disconnecting and immediately reconnecting it
-  (I === null || !I.includes(e)) && (he(e, qe), (e.f & (X | Ct)) === 0 && (e.f ^= Ct), Hs(
+  (I === null || !I.includes(e)) && (he(e, We), (e.f & (X | Lt)) === 0 && (e.f ^= Lt), Hs(
     /** @type {Derived} **/
     e
   ), At(
@@ -526,7 +526,7 @@ function ds(t) {
       var r = ti(t);
       t.teardown = typeof r == "function" ? r : null, t.wv = Qs;
       var c = t.deps, f;
-      ms && Zi && t.f & Le;
+      ms && Zi && t.f & xe;
     } catch (p) {
       It(p, t, s, i || t.ctx);
     } finally {
@@ -546,10 +546,10 @@ function ao() {
 }
 function si() {
   try {
-    for (var t = 0; ot.length > 0; ) {
+    for (var t = 0; rt.length > 0; ) {
       t++ > 1e3 && ao();
-      var e = ot, s = e.length;
-      ot = [];
+      var e = rt, s = e.length;
+      rt = [];
       for (var i = 0; i < s; i++) {
         var o = e[i];
         (o.f & j) === 0 && (o.f ^= j);
@@ -566,7 +566,7 @@ function co(t) {
   if (e !== 0)
     for (var s = 0; s < e; s++) {
       var i = t[s];
-      if ((i.f & (Pt | Mt)) === 0)
+      if ((i.f & (Pt | Ct)) === 0)
         try {
           Nt(i) && (ds(i), i.deps === null && i.first === null && i.nodes_start === null && (i.teardown === null ? ni(i) : i.fn = null));
         } catch (o) {
@@ -579,17 +579,17 @@ function us(t) {
   for (var e = Rt = t; e.parent !== null; ) {
     e = e.parent;
     var s = e.f;
-    if ((s & (ze | xe)) !== 0) {
+    if ((s & (qe | Me)) !== 0) {
       if ((s & j) === 0) return;
       e.f ^= j;
     }
   }
-  ot.push(e);
+  rt.push(e);
 }
 function lo(t) {
   for (var e = [], s = t.first; s !== null; ) {
-    var i = s.f, o = (i & xe) !== 0, r = o && (i & j) !== 0;
-    if (!r && (i & Mt) === 0) {
+    var i = s.f, o = (i & Me) !== 0, r = o && (i & j) !== 0;
+    if (!r && (i & Ct) === 0) {
       if ((i & $s) !== 0)
         e.push(s);
       else if (o)
@@ -618,7 +618,7 @@ function lo(t) {
 }
 function Ue(t) {
   var e;
-  for (ps(); ot.length > 0; )
+  for (ps(); rt.length > 0; )
     Tt = true, si(), ps();
   return (
     /** @type {T} */
@@ -663,12 +663,12 @@ function ho(t, e) {
   s === null ? e.last = e.first = t : (s.next = t, t.prev = s, e.last = t);
 }
 function Te(t, e, s, i = true) {
-  var o = (t & ze) !== 0, r = R, c = {
+  var o = (t & qe) !== 0, r = R, c = {
     ctx: U,
     deps: null,
     nodes_start: null,
     nodes_end: null,
-    f: t | Le,
+    f: t | xe,
     first: null,
     fn: e,
     last: null,
@@ -686,7 +686,7 @@ function Te(t, e, s, i = true) {
       throw ge(c), u;
     }
   else e !== null && us(c);
-  var f = s && c.deps === null && c.first === null && c.nodes_start === null && c.teardown === null && (c.f & (Fs | Lt)) === 0;
+  var f = s && c.deps === null && c.first === null && c.nodes_start === null && c.teardown === null && (c.f & (Fs | xt)) === 0;
   if (!f && !o && i && (r !== null && ho(c, r), S !== null && (S.f & te) !== 0)) {
     var p = (
       /** @type {Derived} */
@@ -702,7 +702,7 @@ function yo(t) {
 }
 function mo(t) {
   fo();
-  var e = R !== null && (R.f & xe) !== 0 && U !== null && !U.m;
+  var e = R !== null && (R.f & Me) !== 0 && U !== null && !U.m;
   if (e) {
     var s = (
       /** @type {ComponentContext} */
@@ -719,15 +719,15 @@ function mo(t) {
   }
 }
 function po(t) {
-  const e = Te(ze, t, true);
+  const e = Te(qe, t, true);
   return () => {
     ge(e);
   };
 }
 function ko(t) {
-  const e = Te(ze, t, true);
+  const e = Te(qe, t, true);
   return (s = {}) => new Promise((i) => {
-    s.outro ? xo(e, () => {
+    s.outro ? Mo(e, () => {
       ge(e), i(void 0);
     }) : (ge(e), i(void 0));
   });
@@ -746,7 +746,7 @@ function bo(t, e = 0) {
   return Te(Ft | ns | e, t, true);
 }
 function wo(t, e = true) {
-  return Te(Ft | xe, t, true, e);
+  return Te(Ft | Me, t, true, e);
 }
 function oi(t) {
   var e = t.teardown;
@@ -770,7 +770,7 @@ function ri(t, e = false) {
 function go(t) {
   for (var e = t.first; e !== null; ) {
     var s = e.next;
-    (e.f & xe) === 0 && ge(e), e = s;
+    (e.f & Me) === 0 && ge(e), e = s;
   }
 }
 function ge(t, e = true) {
@@ -798,13 +798,13 @@ function ni(t) {
   var e = t.parent, s = t.prev, i = t.next;
   s !== null && (s.next = i), i !== null && (i.prev = s), e !== null && (e.first === t && (e.first = i), e.last === t && (e.last = s));
 }
-function xo(t, e) {
+function Mo(t, e) {
   var s = [];
-  ai(t, s, true), Lo(s, () => {
+  ai(t, s, true), xo(s, () => {
     ge(t), e && e();
   });
 }
-function Lo(t, e) {
+function xo(t, e) {
   var s = t.length;
   if (s > 0) {
     var i = () => --s || e();
@@ -814,12 +814,12 @@ function Lo(t, e) {
     e();
 }
 function ai(t, e, s) {
-  if ((t.f & Mt) === 0) {
-    if (t.f ^= Mt, t.transitions !== null)
+  if ((t.f & Ct) === 0) {
+    if (t.f ^= Ct, t.transitions !== null)
       for (const c of t.transitions)
         (c.is_global || s) && e.push(c);
     for (var i = t.first; i !== null; ) {
-      var o = i.next, r = (i.f & Ri) !== 0 || (i.f & xe) !== 0;
+      var o = i.next, r = (i.f & Ri) !== 0 || (i.f & Me) !== 0;
       ai(i, e, r ? s : false), i = o;
     }
   }
@@ -867,9 +867,9 @@ function di(t) {
 function ui() {
   return true;
 }
-const Co = ["touchstart", "touchmove"];
-function Mo(t) {
-  return Co.includes(t);
+const Lo = ["touchstart", "touchmove"];
+function Co(t) {
+  return Lo.includes(t);
 }
 function _o(t) {
   var e = S, s = R;
@@ -883,7 +883,7 @@ function _o(t) {
 const fi = /* @__PURE__ */ new Set(), es = /* @__PURE__ */ new Set();
 function Eo(t, e, s, i = {}) {
   function o(r) {
-    if (i.capture || Ge.call(e, r), !r.cancelBubble)
+    if (i.capture || et.call(e, r), !r.cancelBubble)
       return _o(() => s == null ? void 0 : s.call(this, r));
   }
   return t.startsWith("pointer") || t.startsWith("touch") || t === "wheel" ? as(() => {
@@ -902,7 +902,7 @@ function So(t) {
   for (var s of es)
     s(t);
 }
-function Ge(t) {
+function et(t) {
   var _a2;
   var e = this, s = (
     /** @type {Node} */
@@ -1018,7 +1018,7 @@ function Ro(t, e) {
       r = /** @type {TemplateNode} */
       /* @__PURE__ */ Kt(r);
     if (!r)
-      throw it;
+      throw ot;
     yt(true), St(
       /** @type {Comment} */
       r
@@ -1026,11 +1026,11 @@ function Ro(t, e) {
     const c = mi(t, { ...e, anchor: r });
     if (B === null || B.nodeType !== 8 || /** @type {Comment} */
     B.data !== Di)
-      throw cs(), it;
+      throw cs(), ot;
     return yt(false), /**  @type {Exports} */
     c;
   } catch (c) {
-    if (c === it)
+    if (c === ot)
       return e.recover === false && Hi(), Gt(), to(s), yt(false), yi(t, e);
     throw c;
   } finally {
@@ -1045,10 +1045,10 @@ function mi(t, { target: e, anchor: s, props: i = {}, events: o, context: r, int
       var d = y[n];
       if (!f.has(d)) {
         f.add(d);
-        var a = Mo(d);
-        e.addEventListener(d, Ge, { passive: a });
+        var a = Co(d);
+        e.addEventListener(d, et, { passive: a });
         var l = Ke.get(d);
-        l === void 0 ? (document.addEventListener(d, Ge, { passive: a }), Ke.set(d, 1)) : Ke.set(d, l + 1);
+        l === void 0 ? (document.addEventListener(d, et, { passive: a }), Ke.set(d, 1)) : Ke.set(d, l + 1);
       }
     }
   };
@@ -1072,12 +1072,12 @@ function mi(t, { target: e, anchor: s, props: i = {}, events: o, context: r, int
     }), () => {
       var _a2;
       for (var n of f) {
-        e.removeEventListener(n, Ge);
+        e.removeEventListener(n, et);
         var d = (
           /** @type {number} */
           Ke.get(n)
         );
-        --d === 0 ? (document.removeEventListener(n, Ge), Ke.delete(n)) : Ke.set(n, d);
+        --d === 0 ? (document.removeEventListener(n, et), Ke.delete(n)) : Ke.set(n, d);
       }
       es.delete(p), y !== s && ((_a2 = y.parentNode) == null ? void 0 : _a2.removeChild(y));
     };
@@ -1136,15 +1136,15 @@ function Fo(t, e, s, i, o, r) {
     }
   return r;
 }
-function xs(t, e, s, i) {
+function Ms(t, e, s, i) {
   var o = t.__attributes ?? (t.__attributes = {});
   se && (o[e] = t.getAttribute(e)), o[e] !== (o[e] = s) && ("__styles" in t && (t.__styles = {}), s == null ? t.removeAttribute(e) : typeof s != "string" && Po(t).includes(e) ? t[e] = s : t.setAttribute(e, s));
 }
-var Ls = /* @__PURE__ */ new Map();
+var xs = /* @__PURE__ */ new Map();
 function Po(t) {
-  var e = Ls.get(t.nodeName);
+  var e = xs.get(t.nodeName);
   if (e) return e;
-  Ls.set(t.nodeName, e = []);
+  xs.set(t.nodeName, e = []);
   for (var s, i = t, o = Element.prototype; o !== i; ) {
     s = Pi(i);
     for (var r in s)
@@ -1153,7 +1153,7 @@ function Po(t) {
   }
   return e;
 }
-function Cs(t, e) {
+function Ls(t, e) {
   return t === e || (t == null ? void 0 : t[vt]) === e;
 }
 function Vt(t = {}, e, s, i) {
@@ -1161,11 +1161,11 @@ function Vt(t = {}, e, s, i) {
     var o, r;
     return ii(() => {
       o = r, r = [], at(() => {
-        t !== s(...r) && (e(t, ...r), o && Cs(s(...o), t) && e(null, ...o));
+        t !== s(...r) && (e(t, ...r), o && Ls(s(...o), t) && e(null, ...o));
       });
     }), () => {
       as(() => {
-        r && Cs(s(...r), t) && e(null, ...r);
+        r && Ls(s(...r), t) && e(null, ...r);
       });
     };
   }), t;
@@ -1231,7 +1231,7 @@ function vi(t) {
   let e;
   return No(t, (s) => e = s)(), e;
 }
-function Qe(t, e, s, i) {
+function Ge(t, e, s, i) {
   var o;
   o = /** @type {V} */
   t[e];
@@ -1412,7 +1412,7 @@ typeof HTMLElement == "function" && (bi = class extends HTMLElement {
         i in s && (i === "default" && !this.$$d.children ? (this.$$d.children = t(i), e.default = true) : e[i] = t(i));
       for (const i of this.attributes) {
         const o = this.$$g_p(i.name);
-        o in this.$$d || (this.$$d[o] = xt(o, i.value, this.$$p_d, "toProp"));
+        o in this.$$d || (this.$$d[o] = Mt(o, i.value, this.$$p_d, "toProp"));
       }
       for (const i in this.$$p_d)
         !(i in this.$$d) && this[i] !== void 0 && (this.$$d[i] = this[i], delete this[i]);
@@ -1431,7 +1431,7 @@ typeof HTMLElement == "function" && (bi = class extends HTMLElement {
           for (const i of _t(this.$$c)) {
             if (!((_a2 = this.$$p_d[i]) == null ? void 0 : _a2.reflect)) continue;
             this.$$d[i] = this.$$c[i];
-            const o = xt(
+            const o = Mt(
               i,
               this.$$d[i],
               this.$$p_d,
@@ -1459,7 +1459,7 @@ typeof HTMLElement == "function" && (bi = class extends HTMLElement {
    */
   attributeChangedCallback(t, e, s) {
     var _a2;
-    this.$$r || (t = this.$$g_p(t), this.$$d[t] = xt(t, s, this.$$p_d, "toProp"), (_a2 = this.$$c) == null ? void 0 : _a2.$set({ [t]: this.$$d[t] }));
+    this.$$r || (t = this.$$g_p(t), this.$$d[t] = Mt(t, s, this.$$p_d, "toProp"), (_a2 = this.$$c) == null ? void 0 : _a2.$set({ [t]: this.$$d[t] }));
   }
   disconnectedCallback() {
     this.$$cn = false, Promise.resolve().then(() => {
@@ -1475,7 +1475,7 @@ typeof HTMLElement == "function" && (bi = class extends HTMLElement {
     ) || t;
   }
 });
-function xt(t, e, s, i) {
+function Mt(t, e, s, i) {
   var _a2;
   const o = (_a2 = s[t]) == null ? void 0 : _a2.type;
   if (e = o === "Boolean" && typeof e != "boolean" ? e != null : e, !i || !s[t])
@@ -1533,10 +1533,10 @@ function zo(t, e, s, i, o, r) {
       },
       set(p) {
         var _a2;
-        p = xt(f, p, e), this.$$d[f] = p;
+        p = Mt(f, p, e), this.$$d[f] = p;
         var u = this.$$c;
         if (u) {
-          var k = (_a2 = Be(u, f)) == null ? void 0 : _a2.get;
+          var k = (_a2 = ze(u, f)) == null ? void 0 : _a2.get;
           k ? u[f] = p : u.$set({ [f]: p });
         }
       }
@@ -1566,46 +1566,46 @@ const N = new qo();
 function Wo(t) {
   return t && t.__esModule && Object.prototype.hasOwnProperty.call(t, "default") ? t.default : t;
 }
-var et = { exports: {} }, Ho = et.exports, Ms;
+var tt = { exports: {} }, Ho = tt.exports, Cs;
 function Vo() {
-  return Ms || (Ms = 1, (function(t, e) {
+  return Cs || (Cs = 1, (function(t, e) {
     (function(s, i) {
-      var o = "1.0.41", r = "", c = "?", f = "function", p = "undefined", u = "object", k = "string", y = "major", n = "model", d = "name", a = "type", l = "vendor", m = "version", $ = "architecture", A = "console", g = "mobile", b = "tablet", F = "smarttv", P = "wearable", ie = "embedded", Z = 500, ye = "Amazon", oe = "Apple", We = "ASUS", ct = "BlackBerry", Ce = "Browser", Me = "Chrome", Ut = "Edge", Re = "Firefox", Oe = "Google", lt = "Honor", J = "Huawei", Bt = "Lenovo", Ae = "LG", He = "Microsoft", Ve = "Motorola", $e = "Nvidia", dt = "OnePlus", _e2 = "Opera", je = "OPPO", Ee = "Samsung", ut = "Sharp", Q = "Sony", Ye = "Xiaomi", Fe = "Zebra", Xe = "Facebook", Ze = "Chromium OS", Se = "Mac OS", me = " Browser", ft = function(C, _) {
-        var L = {};
-        for (var T in C)
-          _[T] && _[T].length % 2 === 0 ? L[T] = _[T].concat(C[T]) : L[T] = C[T];
-        return L;
-      }, pe = function(C) {
-        for (var _ = {}, L = 0; L < C.length; L++)
-          _[C[L].toUpperCase()] = C[L];
+      var o = "1.0.41", r = "", c = "?", f = "function", p = "undefined", u = "object", k = "string", y = "major", n = "model", d = "name", a = "type", l = "vendor", m = "version", $ = "architecture", A = "console", g = "mobile", b = "tablet", F = "smarttv", P = "wearable", ie = "embedded", Z = 500, ye = "Amazon", oe = "Apple", He = "ASUS", ct = "BlackBerry", Le = "Browser", Ce = "Chrome", Ut = "Edge", Re = "Firefox", Oe = "Google", lt = "Honor", J = "Huawei", Bt = "Lenovo", Ae = "LG", Ve = "Microsoft", je = "Motorola", $e = "Nvidia", dt = "OnePlus", _e2 = "Opera", Ye = "OPPO", Ee = "Samsung", ut = "Sharp", Q = "Sony", Xe = "Xiaomi", Fe = "Zebra", Ze = "Facebook", Je = "Chromium OS", Se = "Mac OS", me = " Browser", ft = function(L, _) {
+        var x = {};
+        for (var T in L)
+          _[T] && _[T].length % 2 === 0 ? x[T] = _[T].concat(L[T]) : x[T] = L[T];
+        return x;
+      }, pe = function(L) {
+        for (var _ = {}, x = 0; x < L.length; x++)
+          _[L[x].toUpperCase()] = L[x];
         return _;
-      }, Y = function(C, _) {
-        return typeof C === k ? h(_).indexOf(h(C)) !== -1 : false;
-      }, h = function(C) {
-        return C.toLowerCase();
-      }, x = function(C) {
-        return typeof C === k ? C.replace(/[^\d\.]/g, r).split(".")[0] : i;
-      }, D = function(C, _) {
-        if (typeof C === k)
-          return C = C.replace(/^\s\s*/, r), typeof _ === p ? C : C.substring(0, Z);
-      }, M = function(C, _) {
-        for (var L = 0, T, de, re, E, w, ne; L < _.length && !w; ) {
-          var zt = _[L], ys = _[L + 1];
+      }, Y = function(L, _) {
+        return typeof L === k ? h(_).indexOf(h(L)) !== -1 : false;
+      }, h = function(L) {
+        return L.toLowerCase();
+      }, M = function(L) {
+        return typeof L === k ? L.replace(/[^\d\.]/g, r).split(".")[0] : i;
+      }, D = function(L, _) {
+        if (typeof L === k)
+          return L = L.replace(/^\s\s*/, r), typeof _ === p ? L : L.substring(0, Z);
+      }, C = function(L, _) {
+        for (var x = 0, T, de, re, E, w, ne; x < _.length && !w; ) {
+          var zt = _[x], ys = _[x + 1];
           for (T = de = 0; T < zt.length && !w && zt[T]; )
-            if (w = zt[T++].exec(C), w)
+            if (w = zt[T++].exec(L), w)
               for (re = 0; re < ys.length; re++)
                 ne = w[++de], E = ys[re], typeof E === u && E.length > 0 ? E.length === 2 ? typeof E[1] == f ? this[E[0]] = E[1].call(this, ne) : this[E[0]] = E[1] : E.length === 3 ? typeof E[1] === f && !(E[1].exec && E[1].test) ? this[E[0]] = ne ? E[1].call(this, ne, E[2]) : i : this[E[0]] = ne ? ne.replace(E[1], E[2]) : i : E.length === 4 && (this[E[0]] = ne ? E[3].call(this, ne.replace(E[1], E[2])) : i) : this[E] = ne || i;
-          L += 2;
+          x += 2;
         }
-      }, O = function(C, _) {
-        for (var L in _)
-          if (typeof _[L] === u && _[L].length > 0) {
-            for (var T = 0; T < _[L].length; T++)
-              if (Y(_[L][T], C))
-                return L === c ? i : L;
-          } else if (Y(_[L], C))
-            return L === c ? i : L;
-        return _.hasOwnProperty("*") ? _["*"] : C;
+      }, O = function(L, _) {
+        for (var x in _)
+          if (typeof _[x] === u && _[x].length > 0) {
+            for (var T = 0; T < _[x].length; T++)
+              if (Y(_[x][T], L))
+                return x === c ? i : x;
+          } else if (Y(_[x], L))
+            return x === c ? i : x;
+        return _.hasOwnProperty("*") ? _["*"] : L;
       }, z = {
         "1.0": "/8",
         "1.2": "/1",
@@ -1615,7 +1615,7 @@ function Vo() {
         "2.0.3": "/417",
         "2.0.4": "/419",
         "?": "/"
-      }, Je = {
+      }, Qe = {
         ME: "4.90",
         "NT 3.11": "NT3.51",
         "NT 4.0": "NT4.0",
@@ -1708,7 +1708,7 @@ function Vo() {
             /(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i
             // UCBrowser
           ],
-          [m, [d, "UC" + Ce]],
+          [m, [d, "UC" + Le]],
           [
             /microm.+\bqbcore\/([\w\.]+)/i,
             // WeChat Desktop for Windows Built-in Browser
@@ -1736,12 +1736,12 @@ function Vo() {
             /slbrowser\/([\w\.]+)/i
             // Smart Lenovo Browser
           ],
-          [m, [d, "Smart Lenovo " + Ce]],
+          [m, [d, "Smart Lenovo " + Le]],
           [
             /(avast|avg)\/([\w\.]+)/i
             // Avast/AVG Secure Browser
           ],
-          [[d, /(.+)/, "$1 Secure " + Ce], m],
+          [[d, /(.+)/, "$1 Secure " + Le], m],
           [
             /\bfocus\/([\w\.]+)/i
             // Firefox Focus
@@ -1835,7 +1835,7 @@ function Vo() {
             /((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i
             // Facebook App for iOS & Android
           ],
-          [[d, Xe], m],
+          [[d, Ze], m],
           [
             /(Klarna)\/([\w\.]+)/i,
             // Klarna Shopping Browser for iOS & Android
@@ -1871,17 +1871,17 @@ function Vo() {
             /headlesschrome(?:\/([\w\.]+)| )/i
             // Chrome Headless
           ],
-          [m, [d, Me + " Headless"]],
+          [m, [d, Ce + " Headless"]],
           [
             / wv\).+(chrome)\/([\w\.]+)/i
             // Chrome WebView
           ],
-          [[d, Me + " WebView"], m],
+          [[d, Ce + " WebView"], m],
           [
             /droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i
             // Android Browser
           ],
-          [m, [d, "Android " + Ce]],
+          [m, [d, "Android " + Le]],
           [
             /(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i
             // Chrome/OmniWeb/Arora/Tizen/Nokia
@@ -2054,7 +2054,7 @@ function Vo() {
             /\b((?:red)?mi[-_ ]?pad[\w- ]*)(?: bui|\))/i
             // Mi Pad tablets
           ],
-          [[n, /_/g, " "], [l, Ye], [a, b]],
+          [[n, /_/g, " "], [l, Xe], [a, b]],
           [
             /\b(poco[\w ]+|m2\d{3}j\d\d[a-z]{2})(?: bui|\))/i,
             // Xiaomi POCO
@@ -2070,17 +2070,17 @@ function Vo() {
             // Xiaomi Mi
             / ([\w ]+) miui\/v?\d/i
           ],
-          [[n, /_/g, " "], [l, Ye], [a, g]],
+          [[n, /_/g, " "], [l, Xe], [a, g]],
           [
             // OPPO
             /; (\w+) bui.+ oppo/i,
             /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i
           ],
-          [n, [l, je], [a, g]],
+          [n, [l, Ye], [a, g]],
           [
             /\b(opd2(\d{3}a?))(?: bui|\))/i
           ],
-          [n, [l, O, { OnePlus: ["304", "403", "203"], "*": je }], [a, b]],
+          [n, [l, O, { OnePlus: ["304", "403", "203"], "*": Ye }], [a, b]],
           [
             // Vivo
             /vivo (\w+)(?: bui|\))/i,
@@ -2098,11 +2098,11 @@ function Vo() {
             /\bmot(?:orola)?[- ](\w*)/i,
             /((?:moto(?! 360)[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i
           ],
-          [n, [l, Ve], [a, g]],
+          [n, [l, je], [a, g]],
           [
             /\b(mz60\d|xoom[2 ]{0,2}) build\//i
           ],
-          [n, [l, Ve], [a, b]],
+          [n, [l, je], [a, b]],
           [
             // LG
             /((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i
@@ -2187,11 +2187,11 @@ function Vo() {
             // Asus
             /(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i
           ],
-          [n, [l, We], [a, b]],
+          [n, [l, He], [a, b]],
           [
             / (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i
           ],
-          [n, [l, We], [a, g]],
+          [n, [l, He], [a, g]],
           [
             // HTC
             /(nexus 9)/i
@@ -2314,7 +2314,7 @@ function Vo() {
             /(surface duo)/i
             // Surface Duo
           ],
-          [n, [l, He], [a, b]],
+          [n, [l, Ve], [a, b]],
           [
             /droid [\d\.]+; (fp\du?)(?: b|\))/i
             // Fairphone
@@ -2439,7 +2439,7 @@ function Vo() {
             /(kin\.[onetw]{3})/i
             // Microsoft Kin
           ],
-          [[n, /\./g, " "], [l, He], [a, g]],
+          [[n, /\./g, " "], [l, Ve], [a, g]],
           [
             /droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i
             // Zebra
@@ -2475,7 +2475,7 @@ function Vo() {
             /crkey/i
             // Google Chromecast
           ],
-          [[n, Me + "cast"], [l, Oe], [a, F]],
+          [[n, Ce + "cast"], [l, Oe], [a, F]],
           [
             /droid.+aft(\w+)( bui|\))/i
             // Fire TV
@@ -2501,7 +2501,7 @@ function Vo() {
             /(mi(tv|box)-?\w+) bui/i
             // Xiaomi
           ],
-          [n, [l, Ye], [a, F]],
+          [n, [l, Xe], [a, F]],
           [
             /Hbbtv.*(technisat) (.*);/i
             // TechniSAT
@@ -2547,7 +2547,7 @@ function Vo() {
             /\b(xbox(?: one)?(?!; xbox))[\); ]/i
             // Microsoft Xbox
           ],
-          [n, [l, He], [a, A]],
+          [n, [l, Ve], [a, A]],
           [
             ///////////////////
             // WEARABLES
@@ -2567,7 +2567,7 @@ function Vo() {
             /(ow(?:19|20)?we?[1-3]{1,3})/i
             // Oppo Watch
           ],
-          [n, [l, je], [a, P]],
+          [n, [l, Ye], [a, P]],
           [
             /(watch)(?: ?os[,\/]|\d,\d\/)[\d\.]+/i
             // Apple Watch
@@ -2582,7 +2582,7 @@ function Vo() {
             /(moto 360)/i
             // Motorola 360
           ],
-          [n, [l, Ve], [a, P]],
+          [n, [l, je], [a, P]],
           [
             /(smartwatch 3)/i
             // Sony SmartWatch
@@ -2614,7 +2614,7 @@ function Vo() {
             /; (quest( \d| pro)?)/i
             // Oculus Quest
           ],
-          [n, [l, Xe], [a, P]],
+          [n, [l, Ze], [a, P]],
           [
             ///////////////////
             // EMBEDDED
@@ -2718,14 +2718,14 @@ function Vo() {
             /(windows (?:phone(?: os)?|mobile|iot))[\/ ]?([\d\.\w ]*)/i
             // Windows Phone
           ],
-          [d, [m, O, Je]],
+          [d, [m, O, Qe]],
           [
             /windows nt 6\.2; (arm)/i,
             // Windows RT
             /windows[\/ ]([ntce\d\. ]+\w)(?!.+xbox)/i,
             /(?:win(?=3|9|n)|win 9x )([nt\d\.]+)/i
           ],
-          [[m, O, Je], [d, "Windows"]],
+          [[m, O, Qe], [d, "Windows"]],
           [
             // iOS/macOS
             /[adehimnop]{4,7}\b(?:.*os ([\w]+) like mac|; opera)/i,
@@ -2787,12 +2787,12 @@ function Vo() {
             /crkey\/([\d\.]+)/i
             // Google Chromecast
           ],
-          [m, [d, Me + "cast"]],
+          [m, [d, Ce + "cast"]],
           [
             /(cros) [\w]+(?:\)| ([\w\.]+)\b)/i
             // Chromium OS
           ],
-          [[d, Ze], m],
+          [[d, Je], m],
           [
             // Smart TVs
             /panasonic;(viera)/i,
@@ -2842,25 +2842,25 @@ function Vo() {
           ],
           [d, m]
         ]
-      }, G = function(C, _) {
-        if (typeof C === u && (_ = C, C = i), !(this instanceof G))
-          return new G(C, _).getResult();
-        var L = typeof s !== p && s.navigator ? s.navigator : i, T = C || (L && L.userAgent ? L.userAgent : r), de = L && L.userAgentData ? L.userAgentData : i, re = _ ? ft(hs, _) : hs, E = L && L.userAgent == T;
+      }, G = function(L, _) {
+        if (typeof L === u && (_ = L, L = i), !(this instanceof G))
+          return new G(L, _).getResult();
+        var x = typeof s !== p && s.navigator ? s.navigator : i, T = L || (x && x.userAgent ? x.userAgent : r), de = x && x.userAgentData ? x.userAgentData : i, re = _ ? ft(hs, _) : hs, E = x && x.userAgent == T;
         return this.getBrowser = function() {
           var w = {};
-          return w[d] = i, w[m] = i, M.call(w, T, re.browser), w[y] = x(w[m]), E && L && L.brave && typeof L.brave.isBrave == f && (w[d] = "Brave"), w;
+          return w[d] = i, w[m] = i, C.call(w, T, re.browser), w[y] = M(w[m]), E && x && x.brave && typeof x.brave.isBrave == f && (w[d] = "Brave"), w;
         }, this.getCPU = function() {
           var w = {};
-          return w[$] = i, M.call(w, T, re.cpu), w;
+          return w[$] = i, C.call(w, T, re.cpu), w;
         }, this.getDevice = function() {
           var w = {};
-          return w[l] = i, w[n] = i, w[a] = i, M.call(w, T, re.device), E && !w[a] && de && de.mobile && (w[a] = g), E && w[n] == "Macintosh" && L && typeof L.standalone !== p && L.maxTouchPoints && L.maxTouchPoints > 2 && (w[n] = "iPad", w[a] = b), w;
+          return w[l] = i, w[n] = i, w[a] = i, C.call(w, T, re.device), E && !w[a] && de && de.mobile && (w[a] = g), E && w[n] == "Macintosh" && x && typeof x.standalone !== p && x.maxTouchPoints && x.maxTouchPoints > 2 && (w[n] = "iPad", w[a] = b), w;
         }, this.getEngine = function() {
           var w = {};
-          return w[d] = i, w[m] = i, M.call(w, T, re.engine), w;
+          return w[d] = i, w[m] = i, C.call(w, T, re.engine), w;
         }, this.getOS = function() {
           var w = {};
-          return w[d] = i, w[m] = i, M.call(w, T, re.os), E && !w[d] && de && de.platform && de.platform != "Unknown" && (w[d] = de.platform.replace(/chrome os/i, Ze).replace(/macos/i, Se)), w;
+          return w[d] = i, w[m] = i, C.call(w, T, re.os), E && !w[d] && de && de.platform && de.platform != "Unknown" && (w[d] = de.platform.replace(/chrome os/i, Je).replace(/macos/i, Se)), w;
         }, this.getResult = function() {
           return {
             ua: this.getUA(),
@@ -2882,15 +2882,15 @@ function Vo() {
         var ht = new G();
         Pe.ua = ht.getResult(), Pe.ua.get = function() {
           return ht.getUA();
-        }, Pe.ua.set = function(C) {
-          ht.setUA(C);
+        }, Pe.ua.set = function(L) {
+          ht.setUA(L);
           var _ = ht.getResult();
-          for (var L in _)
-            Pe.ua[L] = _[L];
+          for (var x in _)
+            Pe.ua[x] = _[x];
         };
       }
     })(typeof window == "object" ? window : Ho);
-  })(et, et.exports)), et.exports;
+  })(tt, tt.exports)), tt.exports;
 }
 var jo = Vo();
 const Yo = /* @__PURE__ */ Wo(jo), Xo = new Yo(), wi = Xo.getResult(), Zo = (_a = wi.engine.name) == null ? void 0 : _a.toLowerCase(), _s = Number((_b = wi.engine.version) == null ? void 0 : _b.split(".")[0]), jt = {
@@ -3584,7 +3584,7 @@ __publicField(_v, "noRepeat", {
   65516: true
 });
 let v = _v;
-const Xt = 1, kt = 2, er = 1, tr = 2, sr = 4, ir = 8, Zt = 65505, Ss = 65506, Ds = 65507, Ts = 65508, Rs = 65513, Os = 65514, Jt = 65027, xi = 65509, Li = 65407, Ci = 65300, or = 65325;
+const Xt = 1, kt = 2, er = 1, tr = 2, sr = 4, ir = 8, Zt = 65505, Ss = 65506, Ds = 65507, Ts = 65508, Rs = 65513, Os = 65514, Jt = 65027, Mi = 65509, xi = 65407, Li = 65300, or = 65325;
 function rr(t) {
   return t.extended === true ? 57344 | t.scancode : t.scancode;
 }
@@ -3646,194 +3646,210 @@ const nr = [
   { keysym: 65515, scancode: 91, extended: true },
   { keysym: 65516, scancode: 92, extended: true },
   { keysym: 65383, scancode: 93, extended: true },
-  { keysym: 96, scancode: 41, clearMod: 1, clearLocks: 4 },
-  { keysym: 49, scancode: 2, clearMod: 1, clearLocks: 4 },
-  { keysym: 50, scancode: 3, clearMod: 1, clearLocks: 4 },
-  { keysym: 51, scancode: 4, clearMod: 1, clearLocks: 4 },
-  { keysym: 52, scancode: 5, clearMod: 1, clearLocks: 4 },
-  { keysym: 53, scancode: 6, clearMod: 1, clearLocks: 4 },
-  { keysym: 54, scancode: 7, clearMod: 1, clearLocks: 4 },
-  { keysym: 55, scancode: 8, clearMod: 1, clearLocks: 4 },
-  { keysym: 56, scancode: 9, clearMod: 1, clearLocks: 4 },
-  { keysym: 57, scancode: 10, clearMod: 1, clearLocks: 4 },
-  { keysym: 48, scancode: 11, clearMod: 1, clearLocks: 4 },
-  { keysym: 45, scancode: 12, clearMod: 1, clearLocks: 4 },
-  { keysym: 61, scancode: 13, clearMod: 1, clearLocks: 4 },
-  { keysym: 113, scancode: 16, clearMod: 1, clearLocks: 4 },
-  { keysym: 119, scancode: 17, clearMod: 1, clearLocks: 4 },
-  { keysym: 101, scancode: 18, clearMod: 1, clearLocks: 4 },
-  { keysym: 114, scancode: 19, clearMod: 1, clearLocks: 4 },
-  { keysym: 116, scancode: 20, clearMod: 1, clearLocks: 4 },
-  { keysym: 121, scancode: 21, clearMod: 1, clearLocks: 4 },
-  { keysym: 117, scancode: 22, clearMod: 1, clearLocks: 4 },
-  { keysym: 105, scancode: 23, clearMod: 1, clearLocks: 4 },
-  { keysym: 111, scancode: 24, clearMod: 1, clearLocks: 4 },
-  { keysym: 112, scancode: 25, clearMod: 1, clearLocks: 4 },
-  { keysym: 91, scancode: 26, clearMod: 1, clearLocks: 4 },
-  { keysym: 93, scancode: 27, clearMod: 1, clearLocks: 4 },
-  { keysym: 92, scancode: 43, clearMod: 1, clearLocks: 4 },
-  { keysym: 97, scancode: 30, clearMod: 1, clearLocks: 4 },
-  { keysym: 115, scancode: 31, clearMod: 1, clearLocks: 4 },
-  { keysym: 100, scancode: 32, clearMod: 1, clearLocks: 4 },
-  { keysym: 102, scancode: 33, clearMod: 1, clearLocks: 4 },
-  { keysym: 103, scancode: 34, clearMod: 1, clearLocks: 4 },
-  { keysym: 104, scancode: 35, clearMod: 1, clearLocks: 4 },
-  { keysym: 106, scancode: 36, clearMod: 1, clearLocks: 4 },
-  { keysym: 107, scancode: 37, clearMod: 1, clearLocks: 4 },
-  { keysym: 108, scancode: 38, clearMod: 1, clearLocks: 4 },
-  { keysym: 59, scancode: 39, clearMod: 1, clearLocks: 4 },
-  { keysym: 39, scancode: 40, clearMod: 1, clearLocks: 4 },
-  { keysym: 122, scancode: 44, clearMod: 1, clearLocks: 4 },
-  { keysym: 120, scancode: 45, clearMod: 1, clearLocks: 4 },
-  { keysym: 99, scancode: 46, clearMod: 1, clearLocks: 4 },
-  { keysym: 118, scancode: 47, clearMod: 1, clearLocks: 4 },
-  { keysym: 98, scancode: 48, clearMod: 1, clearLocks: 4 },
-  { keysym: 110, scancode: 49, clearMod: 1, clearLocks: 4 },
-  { keysym: 109, scancode: 50, clearMod: 1, clearLocks: 4 },
-  { keysym: 44, scancode: 51, clearMod: 1, clearLocks: 4 },
-  { keysym: 46, scancode: 52, clearMod: 1, clearLocks: 4 },
-  { keysym: 47, scancode: 53, clearMod: 1, clearLocks: 4 },
-  { keysym: 126, scancode: 41, setMod: 1, clearLocks: 4 },
-  { keysym: 33, scancode: 2, setMod: 1, clearLocks: 4 },
-  { keysym: 64, scancode: 3, setMod: 1, clearLocks: 4 },
-  { keysym: 35, scancode: 4, setMod: 1, clearLocks: 4 },
-  { keysym: 36, scancode: 5, setMod: 1, clearLocks: 4 },
-  { keysym: 37, scancode: 6, setMod: 1, clearLocks: 4 },
-  { keysym: 94, scancode: 7, setMod: 1, clearLocks: 4 },
-  { keysym: 38, scancode: 8, setMod: 1, clearLocks: 4 },
-  { keysym: 42, scancode: 9, setMod: 1, clearLocks: 4 },
-  { keysym: 40, scancode: 10, setMod: 1, clearLocks: 4 },
-  { keysym: 41, scancode: 11, setMod: 1, clearLocks: 4 },
-  { keysym: 95, scancode: 12, setMod: 1, clearLocks: 4 },
-  { keysym: 43, scancode: 13, setMod: 1, clearLocks: 4 },
-  { keysym: 81, scancode: 16, setMod: 1, clearLocks: 4 },
-  { keysym: 87, scancode: 17, setMod: 1, clearLocks: 4 },
-  { keysym: 69, scancode: 18, setMod: 1, clearLocks: 4 },
-  { keysym: 82, scancode: 19, setMod: 1, clearLocks: 4 },
-  { keysym: 84, scancode: 20, setMod: 1, clearLocks: 4 },
-  { keysym: 89, scancode: 21, setMod: 1, clearLocks: 4 },
-  { keysym: 85, scancode: 22, setMod: 1, clearLocks: 4 },
-  { keysym: 73, scancode: 23, setMod: 1, clearLocks: 4 },
-  { keysym: 79, scancode: 24, setMod: 1, clearLocks: 4 },
-  { keysym: 80, scancode: 25, setMod: 1, clearLocks: 4 },
-  { keysym: 123, scancode: 26, setMod: 1, clearLocks: 4 },
-  { keysym: 125, scancode: 27, setMod: 1, clearLocks: 4 },
-  { keysym: 124, scancode: 43, setMod: 1, clearLocks: 4 },
-  { keysym: 65, scancode: 30, setMod: 1, clearLocks: 4 },
-  { keysym: 83, scancode: 31, setMod: 1, clearLocks: 4 },
-  { keysym: 68, scancode: 32, setMod: 1, clearLocks: 4 },
-  { keysym: 70, scancode: 33, setMod: 1, clearLocks: 4 },
-  { keysym: 71, scancode: 34, setMod: 1, clearLocks: 4 },
-  { keysym: 72, scancode: 35, setMod: 1, clearLocks: 4 },
-  { keysym: 74, scancode: 36, setMod: 1, clearLocks: 4 },
-  { keysym: 75, scancode: 37, setMod: 1, clearLocks: 4 },
-  { keysym: 76, scancode: 38, setMod: 1, clearLocks: 4 },
-  { keysym: 58, scancode: 39, setMod: 1, clearLocks: 4 },
-  { keysym: 34, scancode: 40, setMod: 1, clearLocks: 4 },
-  { keysym: 90, scancode: 44, setMod: 1, clearLocks: 4 },
-  { keysym: 88, scancode: 45, setMod: 1, clearLocks: 4 },
-  { keysym: 67, scancode: 46, setMod: 1, clearLocks: 4 },
-  { keysym: 86, scancode: 47, setMod: 1, clearLocks: 4 },
-  { keysym: 66, scancode: 48, setMod: 1, clearLocks: 4 },
-  { keysym: 78, scancode: 49, setMod: 1, clearLocks: 4 },
-  { keysym: 77, scancode: 50, setMod: 1, clearLocks: 4 },
-  { keysym: 60, scancode: 51, setMod: 1, clearLocks: 4 },
-  { keysym: 62, scancode: 52, setMod: 1, clearLocks: 4 },
-  { keysym: 63, scancode: 53, setMod: 1, clearLocks: 4 },
-  { keysym: 96, scancode: 41, clearMod: 1, setLocks: 4 },
-  { keysym: 49, scancode: 2, clearMod: 1, setLocks: 4 },
-  { keysym: 50, scancode: 3, clearMod: 1, setLocks: 4 },
-  { keysym: 51, scancode: 4, clearMod: 1, setLocks: 4 },
-  { keysym: 52, scancode: 5, clearMod: 1, setLocks: 4 },
-  { keysym: 53, scancode: 6, clearMod: 1, setLocks: 4 },
-  { keysym: 54, scancode: 7, clearMod: 1, setLocks: 4 },
-  { keysym: 55, scancode: 8, clearMod: 1, setLocks: 4 },
-  { keysym: 56, scancode: 9, clearMod: 1, setLocks: 4 },
-  { keysym: 57, scancode: 10, clearMod: 1, setLocks: 4 },
-  { keysym: 48, scancode: 11, clearMod: 1, setLocks: 4 },
-  { keysym: 45, scancode: 12, clearMod: 1, setLocks: 4 },
-  { keysym: 61, scancode: 13, clearMod: 1, setLocks: 4 },
-  { keysym: 81, scancode: 16, clearMod: 1, setLocks: 4 },
-  { keysym: 87, scancode: 17, clearMod: 1, setLocks: 4 },
-  { keysym: 69, scancode: 18, clearMod: 1, setLocks: 4 },
-  { keysym: 82, scancode: 19, clearMod: 1, setLocks: 4 },
-  { keysym: 84, scancode: 20, clearMod: 1, setLocks: 4 },
-  { keysym: 89, scancode: 21, clearMod: 1, setLocks: 4 },
-  { keysym: 85, scancode: 22, clearMod: 1, setLocks: 4 },
-  { keysym: 73, scancode: 23, clearMod: 1, setLocks: 4 },
-  { keysym: 79, scancode: 24, clearMod: 1, setLocks: 4 },
-  { keysym: 80, scancode: 25, clearMod: 1, setLocks: 4 },
-  { keysym: 91, scancode: 26, clearMod: 1, setLocks: 4 },
-  { keysym: 93, scancode: 27, clearMod: 1, setLocks: 4 },
-  { keysym: 92, scancode: 43, clearMod: 1, setLocks: 4 },
-  { keysym: 65, scancode: 30, clearMod: 1, setLocks: 4 },
-  { keysym: 83, scancode: 31, clearMod: 1, setLocks: 4 },
-  { keysym: 68, scancode: 32, clearMod: 1, setLocks: 4 },
-  { keysym: 70, scancode: 33, clearMod: 1, setLocks: 4 },
-  { keysym: 71, scancode: 34, clearMod: 1, setLocks: 4 },
-  { keysym: 72, scancode: 35, clearMod: 1, setLocks: 4 },
-  { keysym: 74, scancode: 36, clearMod: 1, setLocks: 4 },
-  { keysym: 75, scancode: 37, clearMod: 1, setLocks: 4 },
-  { keysym: 76, scancode: 38, clearMod: 1, setLocks: 4 },
-  { keysym: 59, scancode: 39, clearMod: 1, setLocks: 4 },
-  { keysym: 39, scancode: 40, clearMod: 1, setLocks: 4 },
-  { keysym: 90, scancode: 44, clearMod: 1, setLocks: 4 },
-  { keysym: 88, scancode: 45, clearMod: 1, setLocks: 4 },
-  { keysym: 67, scancode: 46, clearMod: 1, setLocks: 4 },
-  { keysym: 86, scancode: 47, clearMod: 1, setLocks: 4 },
-  { keysym: 66, scancode: 48, clearMod: 1, setLocks: 4 },
-  { keysym: 78, scancode: 49, clearMod: 1, setLocks: 4 },
-  { keysym: 77, scancode: 50, clearMod: 1, setLocks: 4 },
-  { keysym: 44, scancode: 51, clearMod: 1, setLocks: 4 },
-  { keysym: 46, scancode: 52, clearMod: 1, setLocks: 4 },
-  { keysym: 47, scancode: 53, clearMod: 1, setLocks: 4 },
-  { keysym: 126, scancode: 41, setMod: 1, setLocks: 4 },
-  { keysym: 33, scancode: 2, setMod: 1, setLocks: 4 },
-  { keysym: 64, scancode: 3, setMod: 1, setLocks: 4 },
-  { keysym: 35, scancode: 4, setMod: 1, setLocks: 4 },
-  { keysym: 36, scancode: 5, setMod: 1, setLocks: 4 },
-  { keysym: 37, scancode: 6, setMod: 1, setLocks: 4 },
-  { keysym: 94, scancode: 7, setMod: 1, setLocks: 4 },
-  { keysym: 38, scancode: 8, setMod: 1, setLocks: 4 },
-  { keysym: 42, scancode: 9, setMod: 1, setLocks: 4 },
-  { keysym: 40, scancode: 10, setMod: 1, setLocks: 4 },
-  { keysym: 41, scancode: 11, setMod: 1, setLocks: 4 },
-  { keysym: 95, scancode: 12, setMod: 1, setLocks: 4 },
-  { keysym: 43, scancode: 13, setMod: 1, setLocks: 4 },
-  { keysym: 113, scancode: 16, setMod: 1, setLocks: 4 },
-  { keysym: 119, scancode: 17, setMod: 1, setLocks: 4 },
-  { keysym: 101, scancode: 18, setMod: 1, setLocks: 4 },
-  { keysym: 114, scancode: 19, setMod: 1, setLocks: 4 },
-  { keysym: 116, scancode: 20, setMod: 1, setLocks: 4 },
-  { keysym: 121, scancode: 21, setMod: 1, setLocks: 4 },
-  { keysym: 117, scancode: 22, setMod: 1, setLocks: 4 },
-  { keysym: 105, scancode: 23, setMod: 1, setLocks: 4 },
-  { keysym: 111, scancode: 24, setMod: 1, setLocks: 4 },
-  { keysym: 112, scancode: 25, setMod: 1, setLocks: 4 },
-  { keysym: 123, scancode: 26, setMod: 1, setLocks: 4 },
-  { keysym: 125, scancode: 27, setMod: 1, setLocks: 4 },
-  { keysym: 124, scancode: 43, setMod: 1, setLocks: 4 },
-  { keysym: 97, scancode: 30, setMod: 1, setLocks: 4 },
-  { keysym: 115, scancode: 31, setMod: 1, setLocks: 4 },
-  { keysym: 100, scancode: 32, setMod: 1, setLocks: 4 },
-  { keysym: 102, scancode: 33, setMod: 1, setLocks: 4 },
-  { keysym: 103, scancode: 34, setMod: 1, setLocks: 4 },
-  { keysym: 104, scancode: 35, setMod: 1, setLocks: 4 },
-  { keysym: 106, scancode: 36, setMod: 1, setLocks: 4 },
-  { keysym: 107, scancode: 37, setMod: 1, setLocks: 4 },
-  { keysym: 108, scancode: 38, setMod: 1, setLocks: 4 },
-  { keysym: 58, scancode: 39, setMod: 1, setLocks: 4 },
-  { keysym: 34, scancode: 40, setMod: 1, setLocks: 4 },
-  { keysym: 122, scancode: 44, setMod: 1, setLocks: 4 },
-  { keysym: 120, scancode: 45, setMod: 1, setLocks: 4 },
-  { keysym: 99, scancode: 46, setMod: 1, setLocks: 4 },
-  { keysym: 118, scancode: 47, setMod: 1, setLocks: 4 },
-  { keysym: 98, scancode: 48, setMod: 1, setLocks: 4 },
-  { keysym: 110, scancode: 49, setMod: 1, setLocks: 4 },
-  { keysym: 109, scancode: 50, setMod: 1, setLocks: 4 },
-  { keysym: 60, scancode: 51, setMod: 1, setLocks: 4 },
-  { keysym: 62, scancode: 52, setMod: 1, setLocks: 4 },
-  { keysym: 63, scancode: 53, setMod: 1, setLocks: 4 }
+  { keysym: 65027, scancode: 56, extended: true },
+  { keysym: 178, scancode: 41, clearMod: 3, clearLocks: 4 },
+  { keysym: 38, scancode: 2, clearMod: 3, clearLocks: 4 },
+  { keysym: 233, scancode: 3, clearMod: 3, clearLocks: 4 },
+  { keysym: 34, scancode: 4, clearMod: 3, clearLocks: 4 },
+  { keysym: 39, scancode: 5, clearMod: 3, clearLocks: 4 },
+  { keysym: 40, scancode: 6, clearMod: 3, clearLocks: 4 },
+  { keysym: 45, scancode: 7, clearMod: 3, clearLocks: 4 },
+  { keysym: 232, scancode: 8, clearMod: 3, clearLocks: 4 },
+  { keysym: 95, scancode: 9, clearMod: 3, clearLocks: 4 },
+  { keysym: 231, scancode: 10, clearMod: 3, clearLocks: 4 },
+  { keysym: 224, scancode: 11, clearMod: 3, clearLocks: 4 },
+  { keysym: 41, scancode: 12, clearMod: 3, clearLocks: 4 },
+  { keysym: 61, scancode: 13, clearMod: 3, clearLocks: 4 },
+  { keysym: 97, scancode: 16, clearMod: 3, clearLocks: 4 },
+  { keysym: 122, scancode: 17, clearMod: 3, clearLocks: 4 },
+  { keysym: 101, scancode: 18, clearMod: 3, clearLocks: 4 },
+  { keysym: 114, scancode: 19, clearMod: 3, clearLocks: 4 },
+  { keysym: 116, scancode: 20, clearMod: 3, clearLocks: 4 },
+  { keysym: 121, scancode: 21, clearMod: 3, clearLocks: 4 },
+  { keysym: 117, scancode: 22, clearMod: 3, clearLocks: 4 },
+  { keysym: 105, scancode: 23, clearMod: 3, clearLocks: 4 },
+  { keysym: 111, scancode: 24, clearMod: 3, clearLocks: 4 },
+  { keysym: 112, scancode: 25, clearMod: 3, clearLocks: 4 },
+  { keysym: 36, scancode: 27, clearMod: 3, clearLocks: 4 },
+  { keysym: 113, scancode: 30, clearMod: 3, clearLocks: 4 },
+  { keysym: 115, scancode: 31, clearMod: 3, clearLocks: 4 },
+  { keysym: 100, scancode: 32, clearMod: 3, clearLocks: 4 },
+  { keysym: 102, scancode: 33, clearMod: 3, clearLocks: 4 },
+  { keysym: 103, scancode: 34, clearMod: 3, clearLocks: 4 },
+  { keysym: 104, scancode: 35, clearMod: 3, clearLocks: 4 },
+  { keysym: 106, scancode: 36, clearMod: 3, clearLocks: 4 },
+  { keysym: 107, scancode: 37, clearMod: 3, clearLocks: 4 },
+  { keysym: 108, scancode: 38, clearMod: 3, clearLocks: 4 },
+  { keysym: 109, scancode: 39, clearMod: 3, clearLocks: 4 },
+  { keysym: 249, scancode: 40, clearMod: 3, clearLocks: 4 },
+  { keysym: 42, scancode: 43, clearMod: 3, clearLocks: 4 },
+  { keysym: 60, scancode: 86, clearMod: 3, clearLocks: 4 },
+  { keysym: 119, scancode: 44, clearMod: 3, clearLocks: 4 },
+  { keysym: 120, scancode: 45, clearMod: 3, clearLocks: 4 },
+  { keysym: 99, scancode: 46, clearMod: 3, clearLocks: 4 },
+  { keysym: 118, scancode: 47, clearMod: 3, clearLocks: 4 },
+  { keysym: 98, scancode: 48, clearMod: 3, clearLocks: 4 },
+  { keysym: 110, scancode: 49, clearMod: 3, clearLocks: 4 },
+  { keysym: 44, scancode: 50, clearMod: 3, clearLocks: 4 },
+  { keysym: 59, scancode: 51, clearMod: 3, clearLocks: 4 },
+  { keysym: 58, scancode: 52, clearMod: 3, clearLocks: 4 },
+  { keysym: 33, scancode: 53, clearMod: 3, clearLocks: 4 },
+  { keysym: 49, scancode: 2, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 50, scancode: 3, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 51, scancode: 4, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 52, scancode: 5, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 53, scancode: 6, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 54, scancode: 7, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 55, scancode: 8, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 56, scancode: 9, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 57, scancode: 10, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 48, scancode: 11, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 176, scancode: 12, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 43, scancode: 13, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 65, scancode: 16, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 90, scancode: 17, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 69, scancode: 18, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 82, scancode: 19, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 84, scancode: 20, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 89, scancode: 21, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 85, scancode: 22, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 73, scancode: 23, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 79, scancode: 24, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 80, scancode: 25, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 163, scancode: 27, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 81, scancode: 30, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 83, scancode: 31, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 68, scancode: 32, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 70, scancode: 33, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 71, scancode: 34, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 72, scancode: 35, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 74, scancode: 36, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 75, scancode: 37, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 76, scancode: 38, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 77, scancode: 39, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 37, scancode: 40, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 181, scancode: 43, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 62, scancode: 86, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 87, scancode: 44, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 88, scancode: 45, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 67, scancode: 46, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 86, scancode: 47, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 66, scancode: 48, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 78, scancode: 49, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 63, scancode: 50, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 46, scancode: 51, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 47, scancode: 52, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 167, scancode: 53, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 178, scancode: 41, clearMod: 3, setLocks: 4 },
+  { keysym: 49, scancode: 2, clearMod: 3, setLocks: 4 },
+  { keysym: 50, scancode: 3, clearMod: 3, setLocks: 4 },
+  { keysym: 51, scancode: 4, clearMod: 3, setLocks: 4 },
+  { keysym: 52, scancode: 5, clearMod: 3, setLocks: 4 },
+  { keysym: 53, scancode: 6, clearMod: 3, setLocks: 4 },
+  { keysym: 54, scancode: 7, clearMod: 3, setLocks: 4 },
+  { keysym: 55, scancode: 8, clearMod: 3, setLocks: 4 },
+  { keysym: 56, scancode: 9, clearMod: 3, setLocks: 4 },
+  { keysym: 57, scancode: 10, clearMod: 3, setLocks: 4 },
+  { keysym: 48, scancode: 11, clearMod: 3, setLocks: 4 },
+  { keysym: 176, scancode: 12, clearMod: 3, setLocks: 4 },
+  { keysym: 43, scancode: 13, clearMod: 3, setLocks: 4 },
+  { keysym: 65, scancode: 16, clearMod: 3, setLocks: 4 },
+  { keysym: 90, scancode: 17, clearMod: 3, setLocks: 4 },
+  { keysym: 69, scancode: 18, clearMod: 3, setLocks: 4 },
+  { keysym: 82, scancode: 19, clearMod: 3, setLocks: 4 },
+  { keysym: 84, scancode: 20, clearMod: 3, setLocks: 4 },
+  { keysym: 89, scancode: 21, clearMod: 3, setLocks: 4 },
+  { keysym: 85, scancode: 22, clearMod: 3, setLocks: 4 },
+  { keysym: 73, scancode: 23, clearMod: 3, setLocks: 4 },
+  { keysym: 79, scancode: 24, clearMod: 3, setLocks: 4 },
+  { keysym: 80, scancode: 25, clearMod: 3, setLocks: 4 },
+  { keysym: 163, scancode: 27, clearMod: 3, setLocks: 4 },
+  { keysym: 81, scancode: 30, clearMod: 3, setLocks: 4 },
+  { keysym: 83, scancode: 31, clearMod: 3, setLocks: 4 },
+  { keysym: 68, scancode: 32, clearMod: 3, setLocks: 4 },
+  { keysym: 70, scancode: 33, clearMod: 3, setLocks: 4 },
+  { keysym: 71, scancode: 34, clearMod: 3, setLocks: 4 },
+  { keysym: 72, scancode: 35, clearMod: 3, setLocks: 4 },
+  { keysym: 74, scancode: 36, clearMod: 3, setLocks: 4 },
+  { keysym: 75, scancode: 37, clearMod: 3, setLocks: 4 },
+  { keysym: 76, scancode: 38, clearMod: 3, setLocks: 4 },
+  { keysym: 77, scancode: 39, clearMod: 3, setLocks: 4 },
+  { keysym: 37, scancode: 40, clearMod: 3, setLocks: 4 },
+  { keysym: 181, scancode: 43, clearMod: 3, setLocks: 4 },
+  { keysym: 60, scancode: 86, clearMod: 3, setLocks: 4 },
+  { keysym: 87, scancode: 44, clearMod: 3, setLocks: 4 },
+  { keysym: 88, scancode: 45, clearMod: 3, setLocks: 4 },
+  { keysym: 67, scancode: 46, clearMod: 3, setLocks: 4 },
+  { keysym: 86, scancode: 47, clearMod: 3, setLocks: 4 },
+  { keysym: 66, scancode: 48, clearMod: 3, setLocks: 4 },
+  { keysym: 78, scancode: 49, clearMod: 3, setLocks: 4 },
+  { keysym: 63, scancode: 50, clearMod: 3, setLocks: 4 },
+  { keysym: 46, scancode: 51, clearMod: 3, setLocks: 4 },
+  { keysym: 47, scancode: 52, clearMod: 3, setLocks: 4 },
+  { keysym: 167, scancode: 53, clearMod: 3, setLocks: 4 },
+  { keysym: 38, scancode: 2, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 233, scancode: 3, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 34, scancode: 4, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 39, scancode: 5, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 40, scancode: 6, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 45, scancode: 7, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 232, scancode: 8, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 95, scancode: 9, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 231, scancode: 10, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 224, scancode: 11, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 41, scancode: 12, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 61, scancode: 13, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 97, scancode: 16, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 122, scancode: 17, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 101, scancode: 18, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 114, scancode: 19, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 116, scancode: 20, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 121, scancode: 21, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 117, scancode: 22, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 105, scancode: 23, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 111, scancode: 24, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 112, scancode: 25, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 36, scancode: 27, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 113, scancode: 30, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 115, scancode: 31, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 100, scancode: 32, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 102, scancode: 33, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 103, scancode: 34, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 104, scancode: 35, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 106, scancode: 36, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 107, scancode: 37, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 108, scancode: 38, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 109, scancode: 39, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 249, scancode: 40, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 42, scancode: 43, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 62, scancode: 86, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 119, scancode: 44, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 120, scancode: 45, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 99, scancode: 46, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 118, scancode: 47, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 98, scancode: 48, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 110, scancode: 49, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 44, scancode: 50, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 59, scancode: 51, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 58, scancode: 52, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 33, scancode: 53, setMod: 1, clearMod: 2, setLocks: 4 },
+  { keysym: 126, scancode: 3, setMod: 2, clearMod: 1 },
+  { keysym: 35, scancode: 4, setMod: 2, clearMod: 1 },
+  { keysym: 123, scancode: 5, setMod: 2, clearMod: 1 },
+  { keysym: 91, scancode: 6, setMod: 2, clearMod: 1 },
+  { keysym: 124, scancode: 7, setMod: 2, clearMod: 1 },
+  { keysym: 96, scancode: 8, setMod: 2, clearMod: 1 },
+  { keysym: 92, scancode: 9, setMod: 2, clearMod: 1 },
+  { keysym: 94, scancode: 10, setMod: 2, clearMod: 1 },
+  { keysym: 64, scancode: 11, setMod: 2, clearMod: 1 },
+  { keysym: 93, scancode: 12, setMod: 2, clearMod: 1 },
+  { keysym: 125, scancode: 13, setMod: 2, clearMod: 1 },
+  { keysym: 16785580, scancode: 18, setMod: 2, clearMod: 1 },
+  { keysym: 164, scancode: 27, setMod: 2, clearMod: 1 },
+  { keysym: 65106, scancode: 26, clearMod: 3, clearLocks: 4 },
+  { keysym: 65111, scancode: 26, setMod: 1, clearMod: 2, clearLocks: 4 },
+  { keysym: 65111, scancode: 26, clearMod: 3, setLocks: 4 },
+  { keysym: 65106, scancode: 26, setMod: 1, clearMod: 2, setLocks: 4 }
 ];
 var is = /* @__PURE__ */ ((t) => (t[t.Client = 0] = "Client", t[t.Synthetic = 1] = "Synthetic", t))(is || {});
 function As(t) {
@@ -3842,7 +3858,7 @@ function As(t) {
     e += s & 1, s >>>= 1;
   return e;
 }
-class rt {
+const _Be = class _Be {
   constructor(e) {
     __publicField(this, "sink");
     __publicField(this, "keysByKeysym", /* @__PURE__ */ new Map());
@@ -3862,14 +3878,14 @@ class rt {
     return e >= 0 && e <= 65535 ? e : e >= 16777216 && e <= 16842751 ? 65536 + (e & 65535) : null;
   }
   addMapping(e) {
-    const s = rt.mapIndex(e.keysym);
+    const s = _Be.mapIndex(e.keysym);
     if (s === null)
       return;
     let i = this.keysByKeysym.get(s);
     i === void 0 && (i = { definitions: [], pressed: null, userPressed: false }, this.keysByKeysym.set(s, i)), i.definitions.push(e);
   }
   getKey(e) {
-    const s = rt.mapIndex(e);
+    const s = _Be.mapIndex(e);
     return s === null ? null : this.keysByKeysym.get(s) ?? null;
   }
   isPressed(e) {
@@ -3910,13 +3926,16 @@ class rt {
     const i = this.getDefinition(e);
     return i.scancode === 0 ? null : (s && (this.updateLocks(i.setLocks ?? 0, i.clearLocks ?? 0), this.updateModifiers(i.setMod ?? 0, i.clearMod ?? 0)), this.sink.sendScancode(rr(i), s), i);
   }
-  // guac_rdp_keyboard_send_missing_key, reduced to its Unicode fallback (decompose always fails on the
-  // en-US keymap). Like keyboard.c, this fires exactly ONE RDP Unicode event, on the keysym press
-  // ("Unlike key events, RDP Unicode events do not have a pressed or released state" -- keyboard.c).
-  // Sending a matching Unicode RELEASE (as a naive down/up pairing would) makes xrdp re-map and then
-  // immediately un-map the temporary keycode, and xkb-based terminals (Alacritty) then fail to resolve
-  // the injected keysym to a character -- so no release is sent.
+  // guac_rdp_keyboard_send_missing_key: first try to type the character as a dead key + base key using
+  // REAL scancodes (guac_rdp_decompose_keysym) -- on the French guest, e-circumflex etc. compose via
+  // the dead circumflex/dieresis keys and land in xkb terminals like Alacritty. Only if decomposition
+  // is not possible does it fall back to a single RDP Unicode event (which this guest's xrdp surfaces
+  // only to IM-aware apps, not xkb terminals). Like keyboard.c, the Unicode fallback fires exactly ONE
+  // event on the press; sending a matching Unicode RELEASE makes xrdp un-map the temporary keycode
+  // before an xkb terminal resolves it, so no release is sent.
   sendMissingKey(e) {
+    if (this.decompose(e))
+      return;
     let s;
     if (e <= 255)
       s = e;
@@ -3925,6 +3944,38 @@ class rt {
     else
       return;
     this.sink.sendUnicode(s);
+  }
+  // guac_rdp_decompose_keysym + guac_rdp_decomposed_keys (decompose.c). Types an accented Latin-1
+  // character as a dead key followed by its base key, both as real scancodes, when both keysyms are
+  // defined in the current keymap. Returns true if the keysym was handled this way.
+  decompose(e) {
+    if (e < 0 || e > 255)
+      return false;
+    const s = _Be.decomposedKeys.get(e);
+    if (s === void 0)
+      return false;
+    const [i, o] = s;
+    return this.getKey(i) === null || this.getKey(o) === null ? false : (this.updateKeysym(
+      i,
+      true,
+      1
+      /* Synthetic */
+    ), this.updateKeysym(
+      i,
+      false,
+      1
+      /* Synthetic */
+    ), this.updateKeysym(
+      o,
+      true,
+      1
+      /* Synthetic */
+    ), this.updateKeysym(
+      o,
+      false,
+      1
+      /* Synthetic */
+    ), true);
   }
   // guac_rdp_keyboard_update_locks: kept faithful for the cost model; the guest is NOT synchronized
   // from here (see header deviation 1).
@@ -3989,7 +4040,7 @@ class rt {
   updateKeysym(e, s, i) {
     const o = this.getKey(e);
     if (i === 0 && o !== null && (s && !o.userPressed ? (this.userPressedKeys++, o.userPressed = true) : !s && o.userPressed && (this.userPressedKeys--, o.userPressed = false)), o === null || s && o.pressed === null || !s && o.pressed !== null) {
-      s && (this.lockFlags ^= rt.lockFlag(e));
+      s && (this.lockFlags ^= _Be.lockFlag(e));
       let r = null;
       o !== null && (r = this.sendDefinedKey(o, s), o.pressed = s ? r : null), r === null && s && this.sendMissingKey(e);
     }
@@ -4015,20 +4066,82 @@ class rt {
   }
   static lockFlag(e) {
     switch (e) {
-      case Ci:
+      case Li:
         return er;
       case or:
         return ir;
-      case Li:
-        return tr;
       case xi:
+        return tr;
+      case Mi:
         return sr;
       default:
         return 0;
     }
   }
-}
-var tt = /* @__PURE__ */ ((t) => (t.CAPS_LOCK = "CapsLock", t.NUM_LOCK = "NumLock", t.SCROLL_LOCK = "ScrollLock", t.KANA_MODE = "KanaMode", t.CapsLock = "CapsLock", t.ScrollLock = "ScrollLock", t.NumLock = "NumLock", t.KanaMode = "KanaMode", t))(tt || {}), fe = /* @__PURE__ */ ((t) => (t[t.CTRL_ALT_DEL = 0] = "CTRL_ALT_DEL", t[t.META = 1] = "META", t[t.CTRL_C = 2] = "CTRL_C", t[t.CTRL_V = 3] = "CTRL_V", t))(fe || {}), ke = /* @__PURE__ */ ((t) => (t[t.Fit = 1] = "Fit", t[t.Full = 2] = "Full", t[t.Real = 3] = "Real", t))(ke || {}), st = /* @__PURE__ */ ((t) => (t[t.Pixel = 0] = "Pixel", t[t.Line = 1] = "Line", t[t.Page = 2] = "Page", t))(st || {});
+};
+// guac_rdp_decomposed_keys (decompose.c): accented Latin-1 char keysym -> [dead-key keysym, base-key
+// keysym]. Dead keysyms: grave 0xfe50, acute 0xfe51, circumflex 0xfe52, tilde 0xfe53, dieresis
+// 0xfe57, abovering 0xfe58. Base keysyms are the plain characters (' ', A-Z, a-z).
+__publicField(_Be, "decomposedKeys", /* @__PURE__ */ new Map([
+  [94, [65106, 32]],
+  [96, [65104, 32]],
+  [126, [65107, 32]],
+  [168, [65111, 32]],
+  [180, [65105, 32]],
+  [192, [65104, 65]],
+  [193, [65105, 65]],
+  [194, [65106, 65]],
+  [195, [65107, 65]],
+  [196, [65111, 65]],
+  [197, [65112, 65]],
+  [200, [65104, 69]],
+  [201, [65105, 69]],
+  [202, [65106, 69]],
+  [203, [65111, 69]],
+  [204, [65104, 73]],
+  [205, [65105, 73]],
+  [206, [65106, 73]],
+  [207, [65111, 73]],
+  [209, [65107, 78]],
+  [210, [65104, 79]],
+  [211, [65105, 79]],
+  [212, [65106, 79]],
+  [213, [65107, 79]],
+  [214, [65111, 79]],
+  [217, [65104, 85]],
+  [218, [65105, 85]],
+  [219, [65106, 85]],
+  [220, [65111, 85]],
+  [221, [65105, 89]],
+  [224, [65104, 97]],
+  [225, [65105, 97]],
+  [226, [65106, 97]],
+  [227, [65107, 97]],
+  [228, [65111, 97]],
+  [229, [65112, 97]],
+  [232, [65104, 101]],
+  [233, [65105, 101]],
+  [234, [65106, 101]],
+  [235, [65111, 101]],
+  [236, [65104, 105]],
+  [237, [65105, 105]],
+  [238, [65106, 105]],
+  [239, [65111, 105]],
+  [241, [65107, 110]],
+  [242, [65104, 111]],
+  [243, [65105, 111]],
+  [244, [65106, 111]],
+  [245, [65107, 111]],
+  [246, [65111, 111]],
+  [249, [65104, 117]],
+  [250, [65105, 117]],
+  [251, [65106, 117]],
+  [252, [65111, 117]],
+  [253, [65105, 121]],
+  [255, [65111, 121]]
+]));
+let Be = _Be;
+var st = /* @__PURE__ */ ((t) => (t.CAPS_LOCK = "CapsLock", t.NUM_LOCK = "NumLock", t.SCROLL_LOCK = "ScrollLock", t.KANA_MODE = "KanaMode", t.CapsLock = "CapsLock", t.ScrollLock = "ScrollLock", t.NumLock = "NumLock", t.KanaMode = "KanaMode", t))(st || {}), fe = /* @__PURE__ */ ((t) => (t[t.CTRL_ALT_DEL = 0] = "CTRL_ALT_DEL", t[t.META = 1] = "META", t[t.CTRL_C = 2] = "CTRL_C", t[t.CTRL_V = 3] = "CTRL_V", t))(fe || {}), ke = /* @__PURE__ */ ((t) => (t[t.Fit = 1] = "Fit", t[t.Full = 2] = "Full", t[t.Real = 3] = "Real", t))(ke || {}), it = /* @__PURE__ */ ((t) => (t[t.Pixel = 0] = "Pixel", t[t.Line = 1] = "Line", t[t.Page = 2] = "Page", t))(it || {});
 class ar {
   constructor(e, s, i) {
     __publicField(this, "username");
@@ -4205,12 +4318,12 @@ class $t {
         this.pendingKeyEvents.push(this.module.DeviceEvent.unicodePressed(String.fromCodePoint(i)));
       }
     };
-    this.guacRdp = new rt(s), this.guacKeyboard.onKeyDown = (i) => ($t.isForwardedLockKeysym(i) || (this.pendingKeyEvents = [], this.guacRdp.updateKeysym(i, true, is.Client), this.flushPendingKeyEvents()), false), this.guacKeyboard.onKeyUp = (i) => {
+    this.guacRdp = new Be(s), this.guacKeyboard.onKeyDown = (i) => ($t.isForwardedLockKeysym(i) || (this.pendingKeyEvents = [], this.guacRdp.updateKeysym(i, true, is.Client), this.flushPendingKeyEvents()), false), this.guacKeyboard.onKeyUp = (i) => {
       $t.isForwardedLockKeysym(i) || (this.pendingKeyEvents = [], this.guacRdp.updateKeysym(i, false, is.Client), this.flushPendingKeyEvents());
     }, N.info("Web bridge initialized.");
   }
   static isForwardedLockKeysym(e) {
-    return e === xi || e === Li || e === Ci;
+    return e === Mi || e === xi || e === Li;
   }
   flushPendingKeyEvents() {
     if (this.pendingKeyEvents.length > 0) {
@@ -4350,13 +4463,13 @@ class $t {
   rotation_unit_from_wheel_event(e) {
     switch (e.deltaMode) {
       case e.DOM_DELTA_PIXEL:
-        return st.Pixel;
+        return it.Pixel;
       case e.DOM_DELTA_LINE:
-        return st.Line;
+        return it.Line;
       case e.DOM_DELTA_PAGE:
-        return st.Page;
+        return it.Page;
       default:
-        return st.Pixel;
+        return it.Pixel;
     }
   }
   mouseWheel(e) {
@@ -4421,7 +4534,7 @@ class $t {
   // event; keyup is always prevented.
   sendKeyboard(e) {
     if (this.keyboardUnicodeMode) {
-      e.code in tt && this.syncModifier(e), e.type === "keydown" ? this.guacKeyboard.handleKeyDown(e) && e.preventDefault() : e.type === "keypress" ? this.guacKeyboard.handleKeyPress(e) && e.preventDefault() : e.type === "keyup" && (e.preventDefault(), this.guacKeyboard.handleKeyUp(e));
+      e.code in st && this.syncModifier(e), e.type === "keydown" ? this.guacKeyboard.handleKeyDown(e) && e.preventDefault() : e.type === "keypress" ? this.guacKeyboard.handleKeyPress(e) && e.preventDefault() : e.type === "keyup" && (e.preventDefault(), this.guacKeyboard.handleKeyUp(e));
       return;
     }
     e.preventDefault();
@@ -4466,7 +4579,7 @@ class $t {
   }
   syncModifier(e) {
     var _a2;
-    const s = e.getModifierState(tt.NUM_LOCK), i = e.getModifierState(tt.SCROLL_LOCK), o = e.getModifierState(tt.KANA_MODE);
+    const s = e.getModifierState(st.NUM_LOCK), i = e.getModifierState(st.SCROLL_LOCK), o = e.getModifierState(st.KANA_MODE);
     (_a2 = this.session) == null ? void 0 : _a2.synchronizeLockKeys(i, s, false, o);
   }
   doTransactionFromDeviceEvents(e) {
@@ -4629,11 +4742,11 @@ function dr() {
   };
 }
 const rs = dr();
-var W = /* @__PURE__ */ ((t) => (t[t.Full = 0] = "Full", t[t.TextOnly = 1] = "TextOnly", t[t.TextOnlyServerOnly = 2] = "TextOnlyServerOnly", t[t.None = 3] = "None", t))(W || {}), Mi = /* @__PURE__ */ ((t) => (t[t.General = 0] = "General", t[t.WrongPassword = 1] = "WrongPassword", t[t.LogonFailure = 2] = "LogonFailure", t[t.AccessDenied = 3] = "AccessDenied", t[t.RDCleanPath = 4] = "RDCleanPath", t[t.ProxyConnect = 5] = "ProxyConnect", t[t.NegotiationFailure = 6] = "NegotiationFailure", t))(Mi || {});
+var W = /* @__PURE__ */ ((t) => (t[t.Full = 0] = "Full", t[t.TextOnly = 1] = "TextOnly", t[t.TextOnlyServerOnly = 2] = "TextOnlyServerOnly", t[t.None = 3] = "None", t))(W || {}), Ci = /* @__PURE__ */ ((t) => (t[t.General = 0] = "General", t[t.WrongPassword = 1] = "WrongPassword", t[t.LogonFailure = 2] = "LogonFailure", t[t.AccessDenied = 3] = "AccessDenied", t[t.RDCleanPath = 4] = "RDCleanPath", t[t.ProxyConnect = 5] = "ProxyConnect", t[t.NegotiationFailure = 6] = "NegotiationFailure", t))(Ci || {});
 const ur = 100;
 function ae(t) {
   throw {
-    kind: () => Mi.General,
+    kind: () => Ci.General,
     backtrace: () => t
   };
 }
@@ -4876,7 +4989,7 @@ const kr = {
 };
 function _i(t, e) {
   li(e, true), Ao(t, kr);
-  let s = Qe(e, "scale"), i = Qe(e, "verbose"), o = Qe(e, "flexcenter"), r = Qe(e, "module"), c = Qe(e, "dynamicresize"), f = qt(false), p = () => {
+  let s = Ge(e, "scale"), i = Ge(e, "verbose"), o = Ge(e, "flexcenter"), r = Ge(e, "module"), c = Ge(e, "dynamicresize"), f = qt(false), p = () => {
     var _a2, _b2;
     return N.info(`
             capturingInputs: ${document.activeElement === y}
@@ -4887,7 +5000,7 @@ function _i(t, e) {
     p() && Ee(h);
   }
   function g() {
-    Re(), Oe(), window.addEventListener("keydown", A, false), window.addEventListener("keypress", A, false), window.addEventListener("keyup", A, false), window.addEventListener("focus", Fe), window.addEventListener("blur", Xe), document.addEventListener("visibilitychange", Ze), document.addEventListener("fullscreenchange", b);
+    Re(), Oe(), window.addEventListener("keydown", A, false), window.addEventListener("keypress", A, false), window.addEventListener("keyup", A, false), window.addEventListener("focus", Fe), window.addEventListener("blur", Ze), document.addEventListener("visibilitychange", Je), document.addEventListener("fullscreenchange", b);
   }
   function b() {
     K(f) && (Z("100%", "100%", "hidden"), setTimeout(() => J(s()), 150));
@@ -4898,34 +5011,34 @@ function _i(t, e) {
   function P(h) {
     o() === "true" && (u.style.flexGrow = "1", u.style.display = "flex", u.style.justifyContent = "center", u.style.alignItems = "center");
   }
-  function ie(h, x, D) {
-    let M = `height: ${h}; width: ${x}`;
-    M = `${M}; max-height: ${h}; max-width: ${x}; min-height: ${h}; min-width: ${x}`, V(n, De(M));
+  function ie(h, M, D) {
+    let C = `height: ${h}; width: ${M}`;
+    C = `${C}; max-height: ${h}; max-width: ${M}; min-height: ${h}; min-width: ${M}`, V(n, De(C));
   }
-  function Z(h, x, D) {
-    V(d, `height: ${h}; width: ${x}; overflow: ${D}`);
+  function Z(h, M, D) {
+    V(d, `height: ${h}; width: ${M}; overflow: ${D}`);
   }
   let ye, oe;
-  function We(h, x, D) {
-    const M = Math.max(x, Math.min(D, Math.floor(h)));
-    return M % 2 === 0 ? M : M - 1;
+  function He(h, M, D) {
+    const C = Math.max(M, Math.min(D, Math.floor(h)));
+    return C % 2 === 0 ? C : C - 1;
   }
   function ct() {
-    const { x: h, y: x } = Q(), D = We(h, 200, 8192), M = We(x, 200, 8192);
-    D > 0 && M > 0 && (D !== y.width || M !== y.height) && a.resizeDynamic(D, M);
+    const { x: h, y: M } = Q(), D = He(h, 200, 8192), C = He(M, 200, 8192);
+    D > 0 && C > 0 && (D !== y.width || C !== y.height) && a.resizeDynamic(D, C);
   }
-  function Ce() {
+  function Le() {
     c() !== "true" || !K(f) || (clearTimeout(oe), oe = setTimeout(ct, 150));
   }
-  const Me = (h) => {
-    J(s()), Ce();
+  const Ce = (h) => {
+    J(s()), Le();
   };
   function Ut() {
     var _a2;
-    const h = (_a2 = k == null ? void 0 : k.getRootNode) == null ? void 0 : _a2.call(k), x = h && "host" in h ? h.host : void 0;
-    !x || typeof ResizeObserver > "u" || (ye = new ResizeObserver(() => {
-      J(s()), Ce();
-    }), ye.observe(x));
+    const h = (_a2 = k == null ? void 0 : k.getRootNode) == null ? void 0 : _a2.call(k), M = h && "host" in h ? h.host : void 0;
+    !M || typeof ResizeObserver > "u" || (ye = new ResizeObserver(() => {
+      J(s()), Le();
+    }), ye.observe(M));
   }
   function Re() {
     a.resizeObservable.subscribe((h) => {
@@ -4933,7 +5046,7 @@ function _i(t, e) {
     });
   }
   function Oe() {
-    window.addEventListener("resize", Me), Ut(), a.scaleObservable.subscribe((h) => {
+    window.addEventListener("resize", Ce), Ut(), a.scaleObservable.subscribe((h) => {
       N.info("Change scale!"), J(h);
     }), a.dynamicResizeObservable.subscribe((h) => {
       N.info(`Dynamic resize requested: ${h.width}x${h.height}`), J(s());
@@ -4947,8 +5060,8 @@ function _i(t, e) {
   function J(h) {
     if (F(), K(f)) {
       if (c() === "true") {
-        const x = Q();
-        Z("initial", "initial", "hidden"), ie(`${x.y}px`, `${x.x}px`), P();
+        const M = Q();
+        Z("initial", "initial", "hidden"), ie(`${M.y}px`, `${M.x}px`), P();
         return;
       }
       switch (h) {
@@ -4962,39 +5075,39 @@ function _i(t, e) {
           break;
         case "real":
         case ke.Real:
-          N.info("Size to real"), $ = ke.Real, He(), s("real");
+          N.info("Size to real"), $ = ke.Real, Ve(), s("real");
           break;
       }
     }
   }
   function Bt() {
-    const h = Q(), x = h.x, D = h.y;
-    let M = y.width, O = y.height;
-    const z = Math.min(x / y.width, D / y.height);
-    M = M * z, O = O * z, Z(`${D}px`, `${x}px`, "hidden"), M = M > 0 ? M : 0, O = O > 0 ? O : 0, ie(`${O}px`, `${M}px`);
+    const h = Q(), M = h.x, D = h.y;
+    let C = y.width, O = y.height;
+    const z = Math.min(M / y.width, D / y.height);
+    C = C * z, O = O * z, Z(`${D}px`, `${M}px`, "hidden"), C = C > 0 ? C : 0, O = O > 0 ? O : 0, ie(`${O}px`, `${C}px`);
   }
   function Ae(h = false) {
-    const x = Q(), D = x.x, M = x.y;
+    const M = Q(), D = M.x, C = M.y;
     let O = y.width, z = y.height;
-    if (!h || D < y.width || M < y.height) {
-      const Je = Math.min(D / y.width, M / y.height);
-      O = O * Je, z = z * Je;
+    if (!h || D < y.width || C < y.height) {
+      const Qe = Math.min(D / y.width, C / y.height);
+      O = O * Qe, z = z * Qe;
     }
     O = O > 0 ? O : 0, z = z > 0 ? z : 0, Z("initial", "initial", "hidden"), ie(`${z}px`, `${O}px`), P();
   }
-  function He() {
-    const h = Q(), x = h.x, D = h.y;
-    x < y.width || D < y.height ? Z(`${Math.min(D, y.height)}px`, `${Math.min(x, y.width)}px`, "auto") : Z("initial", "initial", "initial"), ie(`${y.height}px`, `${y.width}px`), P();
+  function Ve() {
+    const h = Q(), M = h.x, D = h.y;
+    M < y.width || D < y.height ? Z(`${Math.min(D, y.height)}px`, `${Math.min(M, y.width)}px`, "auto") : Z("initial", "initial", "initial"), ie(`${y.height}px`, `${y.width}px`), P();
   }
-  function Ve(h) {
-    const x = y == null ? void 0 : y.getBoundingClientRect(), D = (y == null ? void 0 : y.width) / x.width, M = (y == null ? void 0 : y.height) / x.height, O = {
-      x: Math.round((h.clientX - x.left) * D),
-      y: Math.round((h.clientY - x.top) * M)
+  function je(h) {
+    const M = y == null ? void 0 : y.getBoundingClientRect(), D = (y == null ? void 0 : y.width) / M.width, C = (y == null ? void 0 : y.height) / M.height, O = {
+      x: Math.round((h.clientX - M.left) * D),
+      y: Math.round((h.clientY - M.top) * C)
     };
     a.updateMousePosition(O);
   }
-  function $e(h, x) {
-    a.mouseButtonState(h, x, true);
+  function $e(h, M) {
+    a.mouseButtonState(h, M, true);
   }
   function dt(h) {
     a.mouseWheel(h);
@@ -5002,22 +5115,22 @@ function _i(t, e) {
   function _e2(h) {
     y.focus({ preventScroll: true }), a.mouseIn(h);
   }
-  function je(h) {
+  function Ye(h) {
     a.mouseOut(h);
   }
   function Ee(h) {
     return a.sendKeyboardEvent(h), true;
   }
   function ut() {
-    const h = window, x = document, D = x.documentElement, M = x.getElementsByTagName("body")[0], O = h.innerWidth ?? D.clientWidth ?? M.clientWidth, z = h.innerHeight ?? D.clientHeight ?? M.clientHeight;
+    const h = window, M = document, D = M.documentElement, C = M.getElementsByTagName("body")[0], O = h.innerWidth ?? D.clientWidth ?? C.clientWidth, z = h.innerHeight ?? D.clientHeight ?? C.clientHeight;
     return { x: O, y: z };
   }
   function Q() {
     var _a2;
-    const h = (_a2 = k == null ? void 0 : k.getRootNode) == null ? void 0 : _a2.call(k), x = h && "host" in h ? h.host : void 0;
-    return x && x.clientWidth > 0 && x.clientHeight > 0 ? { x: x.clientWidth, y: x.clientHeight } : ut();
+    const h = (_a2 = k == null ? void 0 : k.getRootNode) == null ? void 0 : _a2.call(k), M = h && "host" in h ? h.host : void 0;
+    return M && M.clientWidth > 0 && M.clientHeight > 0 ? { x: M.clientWidth, y: M.clientHeight } : ut();
   }
-  async function Ye() {
+  async function Xe() {
     N.info("Start canvas initialization..."), y.width = 800, y.height = 600, a.setCanvas(y), a.setOnCanvasResized(lt), g();
     let h = {
       irgUserInteraction: m.getExposedFunctions()
@@ -5037,27 +5150,27 @@ function _i(t, e) {
       console.error("Failed to run the function queued for execution when the window received focus: " + h);
     }
   }
-  function Xe() {
+  function Ze() {
     a.focusLost();
   }
-  function Ze() {
+  function Je() {
     document.visibilityState === "hidden" && a.focusLost();
   }
   pi(async () => {
-    os.set(false), N.verbose = i() === "true", N.info("Dom ready"), await Ye(), await l.initClipboard();
+    os.set(false), N.verbose = i() === "true", N.info("Dom ready"), await Xe(), await l.initClipboard();
   }), Ko(() => {
-    window.removeEventListener("resize", Me), window.removeEventListener("keydown", A, false), window.removeEventListener("keypress", A, false), window.removeEventListener("keyup", A, false), window.removeEventListener("focus", Fe), window.removeEventListener("blur", Xe), document.removeEventListener("visibilitychange", Ze), document.removeEventListener("fullscreenchange", b), ye == null ? void 0 : ye.disconnect(), clearTimeout(oe), os.set(true);
+    window.removeEventListener("resize", Ce), window.removeEventListener("keydown", A, false), window.removeEventListener("keypress", A, false), window.removeEventListener("keyup", A, false), window.removeEventListener("focus", Fe), window.removeEventListener("blur", Ze), document.removeEventListener("visibilitychange", Je), document.removeEventListener("fullscreenchange", b), ye == null ? void 0 : ye.disconnect(), clearTimeout(oe), os.set(true);
   });
   var Se = pr(), me = Ht(Se);
   let ft;
   var pe = Ht(me), Y = Ht(pe);
-  return Y.__mousemove = Ve, Y.__mousedown = [hr, $e], Y.__mouseup = [yr, $e], Y.__contextmenu = [mr], Vt(Y, (h) => y = h, () => y), Wt(pe), Wt(me), Vt(me, (h) => k = h, () => k), Wt(Se), Vt(Se, (h) => u = h, () => u), vo(() => {
+  return Y.__mousemove = je, Y.__mousedown = [hr, $e], Y.__mouseup = [yr, $e], Y.__contextmenu = [mr], Vt(Y, (h) => y = h, () => y), Wt(pe), Wt(me), Vt(me, (h) => k = h, () => k), Wt(Se), Vt(Se, (h) => u = h, () => u), vo(() => {
     ft = Fo(me, 1, `screen-wrapper scale-${s() ?? ""}`, "svelte-1103xra", ft, {
       hidden: !K(f),
       "capturing-inputs": p
-    }), xs(me, "style", K(d)), xs(pe, "style", K(n));
+    }), Ms(me, "style", K(d)), Ms(pe, "style", K(n));
   }), mt("mouseleave", Y, (h) => {
-    je(h);
+    Ye(h);
   }), mt("mouseenter", Y, (h) => {
     _e2(h);
   }), mt("wheel", Y, dt), mt("selectstart", Y, (h) => {
