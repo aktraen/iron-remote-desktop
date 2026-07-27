@@ -8,8 +8,8 @@
         "Zacharia Ellaham",
         "Alexandr Yusuk"
     ],
-    "description": "Backend-agnostic Web Component for remote desktop protocols — aktraen fork: layout-independent shortcuts + container-size resize + host->guest clipboard push + dynamic guest resize + BEPO Shift-number-row digits",
-    "version": "0.11.0-aktraen.12",
+    "description": "Backend-agnostic Web Component for remote desktop protocols — aktraen fork: layout-independent shortcuts + container-size resize + host->guest clipboard push + dynamic guest resize + BEPO Shift-number-row digits + no page-initiated clipboard read",
+    "version": "0.11.0-aktraen.13",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/aktraen/IronRDP.git"

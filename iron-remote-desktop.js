@@ -3903,11 +3903,7 @@ class Vn {
           name: "clipboard-read"
         })).state === "denied" && (this.ClipboardApiSupported = W.TextOnly);
       } catch {
-        try {
-          await navigator.clipboard.read();
-        } catch {
-          this.ClipboardApiSupported = W.TextOnly;
-        }
+        this.ClipboardApiSupported = W.TextOnly;
       }
     if (this.ClipboardApiSupported === W.None) {
       this.remoteDesktopService.emitWarningEvent(
