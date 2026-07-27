@@ -3588,8 +3588,6 @@ class Un {
       for (const m of d)
         l.push(s.keyReleased(m));
       l.push(s.keyPressed(n)), l.push(s.keyReleased(n));
-      for (const m of d)
-        l.push(s.keyPressed(m));
     }
     for (const d of f)
       l.push(s.keyPressed(d));
